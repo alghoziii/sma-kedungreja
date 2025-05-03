@@ -14,28 +14,28 @@ export default createStore({
                 title: 'Lomba Bapak Ibu Guru',
                 description: 'Lomba kreativitas untuk bapak ibu guru SMA Negeri 1 Kedungreja',
                 date: '15 April 2025',
-                image: '/public/news1.png'
+                image: '/news1.png'
             },
             {
                 id: 2,
                 title: 'Lomba Pakaian Daur Ulang',
                 description: 'Ajang kreativitas siswa dengan memanfaatkan bahan daur ulang',
                 date: '20 April 2025',
-                image: '/public/news2.jpg'
+                image: '/news2.jpg'
             },
             {
                 id: 3,
                 title: 'Lomba Seni',
                 description: 'Pentas seni dan budaya siswa SMA Negeri 1 Kedungreja',
                 date: '25 April 2025',
-                image: '/public/news3.jpg'
+                image: '/news3.jpg'
             },
             {
                 id: 4,
                 title: 'Lomba Seni',
                 description: 'Pentas seni dan budaya siswa SMA Negeri 1 Kedungreja',
                 date: '25 April 2025',
-                image: '/public/news3.jpg'
+                image: '/news3.jpg'
             },
         ],
         profileMenu: [
