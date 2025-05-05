@@ -1,8 +1,17 @@
+<script setup>
+const props = defineProps({
+  news: {
+    type: Object,
+    required: true,
+  },
+});
+</script>
+
 <template>
   <div
     class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
   >
-    <div class="h-48 overflow-hidden" >
+    <div class="h-48 overflow-hidden">
       <img
         :src="news.image"
         :alt="news.title"
@@ -21,14 +30,3 @@
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  props: {
-    news: {
-      type: Object,
-      required: true,
-    },
-  },
-};
-</script>

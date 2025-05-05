@@ -1,3 +1,20 @@
+<script setup>
+import { computed } from "vue";
+import { useStore } from "vuex";
+
+const store = useStore();
+
+const schoolInfo = computed(() => {
+  return (
+    store.getters.getSchoolInfo || {
+      address: "Jalan Raya Tambaksari Tp 212 Kedungreja Cilacap",
+      email: "info@sman1kedungreja.sch.id",
+      phone: "02805260258",
+    }
+  );
+});
+</script>
+
 <template>
   <footer class="bg-blue-500 text-white py-8">
     <div class="container mx-auto px-2">
@@ -85,25 +102,6 @@
     </div>
   </footer>
 </template>
-
-<script>
-import { mapGetters } from "vuex";
-
-export default {
-  computed: {
-    ...mapGetters(["getSchoolInfo"]),
-    schoolInfo() {
-      return (
-        this.getSchoolInfo || {
-          address: "Jalan Raya Tambaksari Tp 212 Kedungreja Cilacap",
-          email: "info@sman1kedungreja.sch.id",
-          phone: "02805260258",
-        }
-      );
-    },
-  },
-};
-</script>
 
 <style scoped>
 </style>
