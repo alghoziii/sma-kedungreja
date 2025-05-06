@@ -1,12 +1,16 @@
 <script setup>
 import { ref, computed } from "vue";
 import { useStore } from "vuex";
+import { onMounted } from "vue";
 import FacilityItem from "@/components/FacilityItem.vue";
 
 const mainText = ref("SARANA PRASARANA");
 const subText = ref("SMA NEGERI 1 KEDUNGREJA");
 
 const store = useStore();
+onMounted(() => {
+  store.dispatch("fetchFacilities");
+});
 const facilities = computed(() => store.getters.getFacilitiesContent);
 </script>
 
@@ -34,12 +38,12 @@ const facilities = computed(() => store.getters.getFacilitiesContent);
     />
 
     <div class="text-center mt-10">
-      <router-link
+      <Router-link
         to="/profil/sarana_prasarana/detail"
         class="px-4 py-2 border border-sky-500 text-sky-500 hover:bg-sky-500 hover:text-white rounded transition"
       >
         Lihat Selengkapnya
-      </router-link>
+      </Router-link>
     </div>
   </section>
 </template>

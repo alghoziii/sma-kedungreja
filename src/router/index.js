@@ -11,6 +11,12 @@ import Struktur_Organisasi from '@/views/profile/Struktur_Organisasi.vue'
 import KepalaSekolah from '@/views/profile/KepalaSekolah.vue'
 import Kemitraan from '@/views/profile/Kemitraan.vue'
 import ProgramKerja from '@/views/profile/ProgramKerja.vue'
+import KondisiSiswa from '@/views/profile/KondisiSiswa.vue'
+import KomiteSekolah from '@/views/profile/KomiteSekolah.vue'
+import Prestasi from '@/views/profile/Prestasi.vue'
+import DirektoriGuru from '@/views/guru/DirektoriGuru.vue'
+import GuruView from '@/views/GuruView.vue'
+import DirektoriGuruDetail from '@/views/guru/DirektoriGuruDetail.vue'
 
 const routes = [
     {
@@ -67,9 +73,45 @@ const routes = [
                         name: "program_kerja",
                         component: ProgramKerja
                     },
+                    {
+                        path: "kondisi_siswa",
+                        name: "kondisi_siswa",
+                        component: KondisiSiswa
+                    },
+                    {
+                        path: "komite_sekolah",
+                        name: "komite_sekolah",
+                        component: KomiteSekolah
+                    },
+                    {
+                        path: "prestasi",
+                        name: "prestasi",
+                        component: Prestasi
+                    },
 
                 ]
             },
+            {
+                path: '/guru',
+                name: 'guru',
+                component: GuruView,
+                children: [
+                    {
+                        path: 'direktori_guru',
+                        name: 'direktori_guru',
+                        component: DirektoriGuru
+                    },
+                    {
+                        path: 'direktori_guru_detail/:id',
+                        name: 'direktori_guru_detail',
+                        component: DirektoriGuruDetail,
+                        props: true,
+
+                    },
+
+                ]
+            },
+
 
             { path: '/login', name: 'login', component: LoginView },
 
