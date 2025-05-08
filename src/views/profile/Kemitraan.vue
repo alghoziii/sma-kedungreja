@@ -52,13 +52,13 @@ export default {
         </div>
 
         <div>
-          <h3 class="text-2xl font-semibold text-blue-800 mb-4">
+          <h3 class="text-2xl font-semibold text-blue-900 mb-4">
             Implementasi Kemitraan Dalam Pembangunan
           </h3>
           <p class="text-gray-700 mb-4">{{ kemitraan.header }}</p>
           <ul class="list-disc list-inside text-gray-800 space-y-2 m-8">
             <li v-for="(item, index) in kemitraan.implementasi" :key="index">
-              <span class="font-semibold">{{ item.judul }}</span>
+              <span class="font-semibold">{{ item.judul }}</span> 
               {{ item.deskripsi }}
             </li>
           </ul>

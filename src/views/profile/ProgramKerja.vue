@@ -25,10 +25,7 @@ const programKerja = computed(() => store.getters.getProgramKerja);
         </ol>
       </div>
 
-      <!-- Kanan: Logo -->
-      <div class="md:w-1/3 flex justify-center">
-        <Logo :image="programKerja.image" />
-      </div>
+      <Logo :image="programKerja.image" />
     </div>
   </section>
 </template>

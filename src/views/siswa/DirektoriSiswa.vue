@@ -14,13 +14,13 @@ export default {
     const currentPage = ref(1);
     const itemsPerPage = 16;
     const searchQuery = ref("");
-    const selectedCategory = ref("Guru");
+    const selectedCategory = ref("IPA");
 
     // Ambil data direktori dari Vuex getter
-    const direktoriGuru = computed(() => store.getters.getDirektoriGuru);
+    const direktoriSiswa = computed(() => store.getters.getDirektoriSiswa);
 
     const filteredDirektori = computed(() => {
-      const filtered = direktoriGuru.value.filter(
+      const filtered = direktoriSiswa.value.filter(
         (item) =>
           item.category === selectedCategory.value &&
           item.name.toLowerCase().includes(searchQuery.value.toLowerCase())
@@ -31,7 +31,7 @@ export default {
 
     const totalPages = computed(() =>
       Math.ceil(
-        direktoriGuru.value.filter(
+        direktoriSiswa.value.filter(
           (item) =>
             item.category === selectedCategory.value &&
             item.name.toLowerCase().includes(searchQuery.value.toLowerCase())
@@ -64,16 +64,14 @@ export default {
 <template>
   <div class="container mx-auto px-4 py-8">
     <div class="flex flex-col md:flex-row gap-6">
-      <!-- Sidebar -->
+      <!-- Sidebar - hidden on mobile -->
       <Sidebar class="hidden md:block" />
 
       <!-- Main Content -->
       <div class="w-full md:w-3/4">
-        <h2 class="text-3xl font-bold text-blue-900 mb-6">
-          Direktori Guru & TU
-        </h2>
+        <h2 class="text-3xl font-bold text-blue-900 mb-6">Direktori Siswa</h2>
 
-        <!-- Pencarian dan Dropdown -->
+        <!-- Pencarian dan Dropdown - stacked on mobile -->
         <div
           class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6"
         >
@@ -81,15 +79,15 @@ export default {
             class="w-full sm:w-auto border border-gray-300 rounded px-4 py-2"
             v-model="selectedCategory"
           >
-            <option value="Guru">Guru</option>
-            <option value="TU">TU</option>
+            <option value="IPA">IPA</option>
+            <option value="IPS">IPS</option>
           </select>
           <div
             class="flex items-center border border-gray-300 rounded w-full sm:w-auto"
           >
             <input
               type="text"
-              :placeholder="'Cari ' + selectedCategory"
+              :placeholder="'Cari Siswa ' + selectedCategory"
               class="w-full px-4 py-2 focus:outline-none"
               v-model="searchQuery"
             />
@@ -99,7 +97,7 @@ export default {
           </div>
         </div>
 
-        <!-- Grid Card - Responsive columns -->
+        <!-- Grid Card - responsive columns -->
         <div
           class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
         >
@@ -110,13 +108,13 @@ export default {
             :name="item.name"
             :details="item.details"
             :to="{
-              name: 'direktori_guru_detail',
+              name: 'direktori_siswa_detail',
               params: { id: item.id },
             }"
           />
         </div>
 
-        <!-- Pagination -->
+        <!-- Pagination - responsive -->
         <div class="flex flex-wrap justify-center mt-6 gap-2">
           <button
             class="px-3 py-2 bg-sky-500 text-white rounded hover:bg-sky-600 disabled:bg-gray-300"

@@ -87,16 +87,47 @@ const toggleMobileMenu = () => {
           </svg>
         </button>
 
+        <!-- Dropdown Menu Mobile -->
         <div
           v-if="mobileMenuOpen"
           class="absolute top-16 left-0 right-0 bg-blue-800 z-50 md:hidden"
-        ></div>
+        >
+          <nav class="flex flex-col space-y-4 p-4">
+            <router-link
+              to="/"
+              class="hover:text-yellow-300 transition-colors duration-200"
+            >
+              Beranda
+            </router-link>
+
+            <DropdownMenu label="Profil" :items="profileMenu" path="/profil" />
+            <DropdownMenu label="Guru" :items="guruMenu" path="/guru" />
+            <DropdownMenu label="Siswa" :items="siswaMenu" path="/siswa" />
+            <DropdownMenu
+              label="Informasi"
+              :items="informasiMenu"
+              path="/informasi"
+            />
+            <DropdownMenu label="Galeri" :items="galeriMenu" path="/galeri" />
+
+            <router-link
+              to="/login"
+              class="bg-white hover:bg-yellow-600 text-blue-600 font-medium px-4 py-2 rounded-md transition-colors duration-200"
+            >
+              Login
+            </router-link>
+          </nav>
+        </div>
       </div>
     </div>
   </header>
 </template>
 
 <style scoped>
+.absolute {
+  z-index: 50; 
+}
+
 .router-link-exact-active {
   @apply text-yellow-300 font-medium;
 }

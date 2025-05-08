@@ -25,10 +25,7 @@ const prestasi = computed(() => store.getters.getPrestasi);
         </ol>
       </div>
 
-      <!-- Kanan: Logo -->
-      <div class="md:w-1/3 flex justify-center">
-        <Logo :image="prestasi.image" />
-      </div>
+      <Logo :image="prestasi.image" />
     </div>
   </section>
 </template>
