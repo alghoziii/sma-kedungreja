@@ -190,7 +190,7 @@ export default {
           </div>
         </swiper-slide>
         <div
-          class="flex justify-between absolute inset-x-0 top-1/3 transform -translate-y-1/4 px-11"
+          class="flex justify-between absolute inset-x-0 top-1/3 transform -translate-y-1/4 px-9"
         >
           <button
             @click="swiperRef?.slidePrev()"
@@ -212,3 +212,4 @@ export default {
     </div>
   </div>
 </template>
+

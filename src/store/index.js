@@ -1,4 +1,3 @@
-import Kalender from '@/views/guru/Kalender.vue';
 import { createStore } from 'vuex'
 
 export default createStore({
@@ -53,6 +52,28 @@ export default createStore({
                 alt: "Banner 3",
             },
         ],
+        photos: [
+            { id: 1, title: "Perpustakaan Digital", src: "/artikel 1.jpg" },
+            { id: 2, title: "Upacara Bendera", src: "/artikel2.jpg" },
+            { id: 3, title: "Lomba Sekolah", src: "/artikel3.png" },
+        ],
+        // videos: [
+        //     {
+        //         id: 1,
+        //         title: "Uji Coba SPMB PROV Jateng",
+        //         src: "https://www.youtube.com/embed/1La4QzGeaaQ",
+        //     },
+        //     {
+        //         id: 2,
+        //         title: "Pentas Seni",
+        //         src: "https://www.youtube.com/embed/2La4QzGeaaQ",
+        //     },
+        //     {
+        //         id: 3,
+        //         title: "Lomba Olahraga",
+        //         src: "https://www.youtube.com/embed/3La4QzGeaaQ",
+        //     },
+        // ],
         news: [
             {
                 id: 1,
@@ -1175,46 +1196,33 @@ export default createStore({
         videos: [
             {
                 id: 1,
-                title: "Uji Coba SPMB PROV Jateng",
+                title: "Selamat Hari Guru 2017 SMANKER Jaya",
                 date: "07-03-2025",
-                thumbnail: "/artikel3.png",
-                videoUrl: "https://www.youtube.com/watch?v=da4Xw2Kr79w",
+                thumbnail: "/video4.png",
+                videoUrl: "https://www.youtube.com/watch?v=OaNdJqPCegA&t=1s",
             },
             {
                 id: 2,
-                title: "Peringatan PGRI",
+                title: "Upacara Peringatan Hari Guru",
                 date: "27-11-2023",
-                thumbnail: "/artikel3.png",
-                videoUrl: "https://www.youtube.com/watch?v=da4Xw2Kr79w&ab_channel=Hindia",
+                thumbnail: "/video1.png",
+                videoUrl: "https://www.youtube.com/embed/jFvncZ6YKGs",
             },
             {
                 id: 3,
-                title: "SMAN 1 Kedungreja masa lampau",
+                title: "Sarpras SMAN 1 Kedungreja ",
                 date: "05-09-2023",
-                thumbnail: "/artikel3.png",
-                videoUrl: "https://www.youtube.com/watch?v=da4Xw2Kr79w&ab_channel=Hindia",
+                thumbnail: "/video2.png",
+                videoUrl: "https://youtu.be/kcIL1iR1FL4",
             },
             {
                 id: 4,
-                title: "Kegiatan P5",
+                title: "Profil SMAN 1 KEDUNGREJA",
                 date: "15-12-2022",
-                thumbnail: "/artikel3.png",
-                videoUrl: "https://www.youtube.com/watch?v=da4Xw2Kr79w&ab_channel=Hindia",
+                thumbnail: "/video3.png",
+                videoUrl: "https://youtu.be/M3My0S9h__U",
             },
-            {
-                id: 5,
-                title: "Sarpras",
-                date: "21-11-2022",
-                thumbnail: "/artikel3.png",
-                videoUrl: "https://www.youtube.com/watch?v=da4Xw2Kr79w&ab_channel=Hindia",
-            },
-            {
-                id: 6,
-                title: "Taman SMAN 1 Kedungreja",
-                date: "21-06-2020",
-                thumbnail: "/artikel3.png",
-                videoUrl: "https://www.youtube.com/watch?v=da4Xw2Kr79w&ab_channel=Hindia",
-            },
+
         ],
         albums: [
             {
@@ -1241,31 +1249,7 @@ export default createStore({
                 photoCount: 8,
                 photos: ["/news1.png", "/news2.jpg", "/news3.jpg", "/news1.png", "/news2.jpg", "/news3.jpg"],
             },
-            {
-                id: 5,
-                title: "Semarak Peringatan HUT RI Ke-75",
-                photoCount: 3,
-                photos: ["/news1.png", "/news2.jpg", "/news3.jpg"],
-            },
-            {
-                id: 6,
-                title: "Semarak Peringatan HUT RI Ke-75",
-                photoCount: 3,
-                photos: ["/news1.png", "/news2.jpg", "/news3.jpg"],
-            },
-            {
-                id: 7,
-                title: "Semarak Peringatan HUT RI Ke-75",
-                photoCount: 3,
-                photos: ["/news1.png", "/news2.jpg", "/news3.jpg"],
-            },
-            {
-                id: 8,
-                title: "Semarak Peringatan HUT RI Ke-75",
-                photoCount: 3,
-                photos: ["/news1.png", "/news2.jpg", "/news3.jpg"],
-            },
-            // 
+
         ]
 
     },
@@ -1277,6 +1261,7 @@ export default createStore({
 
 
     getters: {
+        getPhotos: (state) => state.photos,
         getStaff: (state) => state.staff,
         getBanners: (state) => state.banners,
         getAlbums: (state) => state.albums,

@@ -3,12 +3,10 @@ import { computed } from "vue";
 import { useStore } from "vuex";
 import { useRoute, useRouter } from "vue-router";
 import Sidebar from "@/components/Sidebar.vue";
-import YouTube from "vue3-youtube";
 
 export default {
   components: {
     Sidebar,
-    YouTube,
   },
   setup() {
     const store = useStore();
@@ -27,10 +25,9 @@ export default {
     // Ambil data video dari store berdasarkan ID
     const video = computed(() => store.getters.getVideoById(videoId));
 
-    // Navigasi kembali ke halaman galeri video
-    const goBack = () => {
-      router.push({ name: "galeri_video" });
-    };
+    // Debugging data video
+    console.log("Route video ID:", videoId);
+    console.log("Video data:", video.value);
 
     // Fungsi untuk mengekstrak ID YouTube dari URL
     const getYouTubeId = (url) => {
@@ -44,6 +41,14 @@ export default {
     const youTubeVideoId = computed(() =>
       video.value ? getYouTubeId(video.value.videoUrl) : null
     );
+
+    // Debugging ID YouTube
+    console.log("YouTube Video ID:", youTubeVideoId.value);
+
+    // Navigasi kembali ke halaman galeri video
+    const goBack = () => {
+      router.push({ name: "galeri_video" });
+    };
 
     return {
       stats,
@@ -67,11 +72,14 @@ export default {
         </h1>
         <div v-if="video" class="flex flex-col items-center space-y-4">
           <!-- Player YouTube -->
-          <YouTube
+          <iframe
             v-if="youTubeVideoId"
-            :video-id="youTubeVideoId"
+            :src="`https://www.youtube.com/embed/${youTubeVideoId}`"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
             class="w-full max-w-xl aspect-video rounded-md shadow-md"
-          />
+          ></iframe>
           <h2 class="text-2xl font-bold text-gray-900 text-center">
             {{ video.title }}
           </h2>
