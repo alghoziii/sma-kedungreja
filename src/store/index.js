@@ -9,6 +9,50 @@ export default createStore({
             email: 'info@sman1kedungreja.sch.id',
             phone: '09860540758'
         },
+        staff: [
+            {
+                id: 1,
+                name: "Mas Anis",
+                role: "Kepala Sekolah",
+                photo: "/guru/guru1.jpeg",
+            },
+            {
+                id: 2,
+                name: "Ibu Susi",
+                role: "Wakil Kepala Sekolah",
+                photo: "/guru/guru2.jpeg",
+            },
+            {
+                id: 3,
+                name: "Pak Budi",
+                role: "Guru Matematika",
+                photo: "/guru/guru3.jpg",
+            },
+            {
+                id: 4,
+                name: "Bu Rina",
+                role: "Guru Bahasa Inggris",
+                photo: "/guru/guru4.jpeg",
+            },
+        ],
+        banners: [
+
+            {
+                id: 1,
+                src: "/banner2.jpg",
+                alt: "Banner 1",
+            },
+            {
+                id: 2,
+                src: "/banner2.png",
+                alt: "Banner 2",
+            },
+            {
+                id: 3,
+                src: "/banner3.jpeg",
+                alt: "Banner 3",
+            },
+        ],
         news: [
             {
                 id: 1,
@@ -118,7 +162,6 @@ export default createStore({
                     "Drs. Kusworo"
                 ]
             },
-
 
 
             strukturOrganisasi: {
@@ -405,7 +448,7 @@ export default createStore({
         prestasi: {
             title: "Prestasi",
             content:
-                "SMA Negeri 1 Kedungreja Tahun 2016 meraih prestasi :",
+                "SMA Negeri 1 Kedungreja Tahun 2016 meraih prestasi:",
             list: [
                 "Juara 1 OSN Matematika Tingkat Kabupaten Cilacap",
                 "Juara 1 OSN Ekonomi Tingkat Kabupaten Cilacap",
@@ -1234,6 +1277,8 @@ export default createStore({
 
 
     getters: {
+        getStaff: (state) => state.staff,
+        getBanners: (state) => state.banners,
         getAlbums: (state) => state.albums,
         getAlbumById: (state) => (id) => state.albums.find((album) => album.id === id),
         getVideos: (state) => state.videos,
