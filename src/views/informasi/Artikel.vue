@@ -45,7 +45,11 @@ export default {
             class="flex items-center gap-4 bg-gray-100 p-4 rounded shadow-sm"
           >
             <!-- Ikon Berita -->
-            <img :src="item.icon" alt="Berita Icon" class="w-16 h-16" />
+            <img
+              :src="item.icon"
+              alt="artikel Icon"
+              class="w-60 h-40 object-cover rounded"
+            />
 
             <!-- Informasi Berita -->
             <div>

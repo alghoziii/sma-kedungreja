@@ -1114,59 +1114,59 @@ export default createStore({
                     title: "Lomba Bapak Ibu",
                     description: "Lomba makan krupuk dan volly",
                     date: "08/16/2022",
-                    icon: "/tour.png",
+                    icon: "/news1.png",
                 },
                 {
                     title: "Lomba Pakaean Daur Ulang",
                     description: "Lomba Pakaean Daur Ulang SMAN 1 Kedungreja",
                     date: "08/16/2022",
-                    icon: "/tour.png",
+                    icon: "/news2.jpg",
                 },
                 {
                     title: "Lomba Seni",
                     description: "Dalam rangka peringatan HUT RI ke-77 SMAN 1 Kedungreja mengadakan lomba Seni",
                     date: "08/16/2022",
-                    icon: "/tour.png",
+                    icon: "/news3.jpg",
                 },
                 {
                     title: "Karnaval SMAN 1 Kedungreja",
                     description:
                         "Dalam rangka memperingati HUT RI Ke-77 SMAN 1 Kedungreja mengadakan karnaval pembangunan",
                     date: "08/15/2022",
-                    icon: "/tour.png",
+                    icon: "/news3.jpg",
                 },
                 {
                     title: "JADWAL PPDB 2022",
                     description: "JADWAL PPDB SMAN 1 Kedungreja tahun 2022",
                     date: "06/18/2022",
-                    icon: "/tour.png",
+                    icon: "/news3.jpg",
                 },
                 {
                     title: "PESERTA OSNK H1",
                     description: "PESERTA OSNK H1 SMAN 1 Kedungreja",
                     date: "05/24/2022",
-                    icon: "/tour.png",
+                    icon: "/news3.jpg",
                 },
                 {
                     title: "BAGI TAKJIL SMAN 1 KEDUNGREJA 1443 H",
                     description:
                         "Kegiatan bagi-bagi takjil ke masyarakat sekitar SMAN 1 Kedungreja",
                     date: "04/27/2022",
-                    icon: "/tour.png",
+                    icon: "/news3.jpg",
                 },
                 {
                     title: "LMS SMAN 1 KEDUNGREJA",
                     description:
                         "Sebagai peningkatan pembelajaran di era teknologi komputer dengan ini SMAN 1 kedungreja menggunakan Learning...",
                     date: "04/01/2022",
-                    icon: "/tour.png",
+                    icon: "/news3.jpg",
                 },
                 {
                     title: "INFO PPDB",
                     description:
                         "Ayo kita bergabung di keluarga besar SMA Negeri 1 Kedungreja dengan datang ke SMAN 1 Kedungreja atau mengisi link ini...",
                     date: "04/01/2022",
-                    icon: "/tour.png",
+                    icon: "/news3.jpg",
                 },
             ],
             artikel: [

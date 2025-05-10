@@ -139,11 +139,12 @@ export default {
         </div>
 
         <div class="mt-8 text-center">
-          <button
+          <router-link
+          to =/informasi/berita
             class="bg-blue-900 hover:bg-blue-700 text-white px-6 py-2 rounded-lg"
           >
             Lihat Berita Lainnya
-          </button>
+          </router-link>
         </div>
       </div>
     </div>
@@ -214,7 +215,7 @@ export default {
                   <h3 class="font-bold">Web Biologi SMAN 1 Kedungreja</h3>
                   <a
                     href="https://sites.google.com/guru.sma.belajar.id/biologisman1kdr"
-                    class="text-xs"
+                    class="text-sm"
                   >
                     https://sites.google.com/guru.sma.belajar.id/biologisman1kdr
                   </a>
