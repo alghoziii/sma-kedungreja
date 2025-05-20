@@ -63,7 +63,7 @@ export default {
     </div>
 
     <div
-      class="bg-white rounded-lg shadow-md p-4 mb-6 border-2 border-cyan-100"
+      class="bg-white rounded-lg shadow-md p-2 mb-4 border-2 border-cyan-100"
     >
       <h3 class="font-bold mb-2">Banner</h3>
       <swiper
@@ -78,7 +78,7 @@ export default {
           <img
             :src="banner.src"
             :alt="banner.alt"
-            class="w-full h-32 object-cover"
+            class="w-full h-24 object-cover mt-4"
           />
         </SwiperSlide>
       </swiper>
@@ -143,19 +143,22 @@ export default {
     <div class="bg-white rounded-xl shadow-lg border border-cyan-200 p-6 mb-8">
       <h3 class="text-lg font-semibold mb-4 border-b pb-2">Agenda Sekolah</h3>
       <div class="flex justify-center">
-        <div class="rounded-lg overflow-hidden ring-1 ring-cyan-100 shadow-sm">
+        <div class="rounded-lg overflow-hidden ring-1 ring-cyan-500 shadow-sm">
           <VueDatePicker
             v-model="date"
             inline
             auto-apply
-            :enable-time-picker="true"
+            :enable-time-picker="false"
             :format="'dd-MM-yyyy'"
             :locale="'id'"
             :week-start="1"
-            :min-date="minDate"
-            :max-date="maxDate"
-            :disabled-dates="disabledDates"
-            @update:model-value="handleDateChange"
+            readonly
+            disabled
+            :hide-navigation="true"
+            :month-picker="false"
+            :year-picker="false"
+            :partial-range="false"
+            :prevent-min-max-navigation="true"
           />
         </div>
       </div>
@@ -174,7 +177,7 @@ export default {
         :loop="true"
         :autoplay="{ delay: 2000 }"
         :pagination="{ clickable: true }"
-        class="w-full mb-8 relative pb-6"
+        class="w-full mb-6 relative pb-5"
       >
         <swiper-slide v-for="(person, index) in staff" :key="index">
           <div class="flex flex-col items-center">
@@ -190,7 +193,7 @@ export default {
           </div>
         </swiper-slide>
         <div
-          class="flex justify-between absolute inset-x-0 top-1/3 transform -translate-y-1/4 px-9"
+          class="flex justify-between absolute inset-x-0 top-1/3 transform -translate-y-1/4 px-5"
         >
           <button
             @click="swiperRef?.slidePrev()"

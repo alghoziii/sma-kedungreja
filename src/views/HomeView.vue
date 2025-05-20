@@ -308,7 +308,7 @@ export default {
                   :loop="true"
                   :autoplay="{ delay: 3000 }"
                   :pagination="{ clickable: true }"
-                  class="w-full mt-4 relative pb-9"
+                  class="w-full mt-4 relative pb-8"
                   @swiper="setPhotoSwiper"
                 >
                   <swiper-slide v-for="photo in photoGallery" :key="photo.id">
