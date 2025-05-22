@@ -10,35 +10,24 @@ import SaranaPrasaranaDetail from '@/views/profile/SaranaPrasaranaDetail.vue'
 import Struktur_Organisasi from '@/views/profile/Struktur_Organisasi.vue'
 import KepalaSekolah from '@/views/profile/KepalaSekolah.vue'
 import ProgramKerja from '@/views/profile/ProgramKerja.vue'
-import Prestasi from '@/views/profile/Prestasi.vue'
 import DirektoriGuru from '@/views/guru/DirektoriGuru.vue'
 import GuruView from '@/views/GuruView.vue'
 import DirektoriGuruDetail from '@/views/guru/DirektoriGuruDetail.vue'
-import Silabus from '@/views/guru/Silabus.vue'
-import MateriAjar from '@/views/guru/MateriAjar.vue'
-import MateriUji from '@/views/guru/MateriUji.vue'
 import Kalender from '@/views/guru/Kalender.vue'
 import SiswaView from '@/views/SiswaView.vue'
 import DirektoriSiswa from '@/views/siswa/DirektoriSiswa.vue'
 import DirektoriSiswaDetail from '@/views/siswa/DirektoriSiswaDetail.vue'
-import PrestasiSiswa from '@/views/siswa/PrestasiSiswa.vue'
 import Informasi from '@/views/Informasi.vue'
-import InfoSekolah from '@/views/informasi/InfoSekolah.vue'
-import DaftarBlog from '@/views/informasi/DaftarBlog.vue'
-import LinkWebsite from '@/views/informasi/LinkWebsite.vue'
-import PetaSitus from '@/views/informasi/PetaSitus.vue'
 import KontakSekolah from '@/views/informasi/KontakSekolah.vue'
 import Agenda from '@/views/informasi/Agenda.vue'
 import Berita from '@/views/informasi/Berita.vue'
-import Artikel from '@/views/informasi/Artikel.vue'
-import BukuTamu from '@/views/informasi/BukuTamu.vue'
-import BukuTamuList from '@/views/informasi/BukuTamuList.vue'
 import Galeri from '@/views/Galeri.vue'
 import GaleriVideo from '@/views/galleri/GaleriVideo.vue'
 import GaleriFoto from '@/views/galleri/GaleriFoto.vue'
 import GaleriVideoDetail from '@/views/galleri/GaleriVideoDetail.vue'
 import GaleriFotoDetail from '@/views/galleri/GaleriFotoDetail.vue'
 import BeritaDetail from '@/views/informasi/BeritaDetail.vue'
+import Prestasi from '@/views/informasi/Prestasi.vue'
 
 const routes = [
     {
@@ -90,11 +79,7 @@ const routes = [
                         name: "program_kerja",
                         component: ProgramKerja
                     },
-                    {
-                        path: "prestasi",
-                        name: "prestasi",
-                        component: Prestasi
-                    },
+
 
                 ]
             },
@@ -114,21 +99,6 @@ const routes = [
                         component: DirektoriGuruDetail,
                         props: true,
 
-                    },
-                    {
-                        path: 'silabus',
-                        name: 'silabus',
-                        component: Silabus,
-                    },
-                    {
-                        path: 'materi_ajar',
-                        name: 'materi_ajar',
-                        component: MateriAjar,
-                    },
-                    {
-                        path: 'materi_uji',
-                        name: 'materi_uji',
-                        component: MateriUji,
                     },
                     {
                         path: 'kalender',
@@ -154,11 +124,7 @@ const routes = [
                         component: DirektoriSiswaDetail,
                         props: true,
                     },
-                    {
-                        path: 'prestasi_siswa',
-                        name: 'prestasi_siswa',
-                        component: PrestasiSiswa,
-                    },
+
 
                 ]
             },
@@ -167,26 +133,6 @@ const routes = [
                 name: 'informasi',
                 component: Informasi,
                 children: [
-                    {
-                        path: 'info_sekolah',
-                        name: 'info_sekolah',
-                        component: InfoSekolah
-                    },
-                    {
-                        path: 'daftar_blog',
-                        name: 'daftar_blog',
-                        component: DaftarBlog,
-                    },
-                    {
-                        path: 'link_webiste',
-                        name: 'link_webiste',
-                        component: LinkWebsite,
-                    },
-                    {
-                        path: 'peta_situs',
-                        name: 'peta_situs',
-                        component: PetaSitus,
-                    },
                     {
                         path: 'kontak_sekolah',
                         name: 'kontak_sekolah',
@@ -209,19 +155,9 @@ const routes = [
                         props: true,
                     },
                     {
-                        path: 'artikel',
-                        name: 'artikel',
-                        component: Artikel,
-                    },
-                    {
-                        path: 'buku_tamu',
-                        name: 'buku_tamu',
-                        component: BukuTamu,
-                    },
-                    {
-                        path: 'buku_tamu_list',
-                        name: 'buku_tamu_list',
-                        component: BukuTamuList,
+                        path: "prestasi",
+                        name: "prestasi",
+                        component: Prestasi
                     },
 
                 ]

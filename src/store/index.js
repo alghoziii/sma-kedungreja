@@ -66,37 +66,26 @@ export default createStore({
             { id: 3, title: "Sarana Prasarana", route: "/profil/sarana_prasarana" },
             { id: 4, title: "Struktur Organisasi", route: "/profil/struktur_organisasi" },
             { id: 5, title: "Kepala Sekola", route: "/profil/kepala_sekolah" },
-            // { id: 6, title: "Kemitraan", route: "/profil/kemitraan" },
             { id: 7, title: "Program Kerja", route: "/profil/program_kerja" },
-            // { id: 8, title: "Kondisi Siswa", route: "/profil/kondisi_siswa" },
-            // { id: 8, title: "Komite Sekolah", route: "/profil/komite_sekolah" },
-            { id: 8, title: "Prestasi", route: "/profil/prestasi" },
+
         ],
         guruMenu: [
             { id: 1, title: "Direktori Guru", route: "/guru/direktori_guru" },
-            { id: 2, title: "Silabus", route: "/guru/silabus" },
-            { id: 3, title: "Materi Ajar", route: "/guru/materi_ajar" },
-            { id: 4, title: "Materi Uji", route: "/guru/materi_uji" },
-            { id: 5, title: "Kalender Akademik", route: "/guru/kalender" },
+            { id: 2, title: "Kalender Akademik", route: "/guru/kalender" },
         ],
         siswaMenu: [
             { id: 1, title: "Direktor Siswa", route: "/siswa/direktori_siswa" },
-            { id: 2, title: "Prestasi Siswa", route: "/siswa/prestasi_siswa" },
-            { id: 3, title: "Ekstrakulikuler", route: "/siswa/ekstrakulikuler" },
-            { id: 4, title: "Osis", route: "/siswa/osis" },
-            { id: 5, title: "Beasiswa", route: "/siswa/beasiswa" },
-            { id: 5, title: "Direktori Alumi", route: "/siswa/direktori_alumi" },
+            { id: 2, title: "Ekstrakulikuler", route: "/siswa/ekstrakulikuler" },
+            { id: 3, title: "Osis", route: "/siswa/osis" },
+            { id: 4, title: "Direktori Alumi", route: "/siswa/direktori_alumi" },
         ],
         informasiMenu: [
-            { id: 1, title: "Info Sekolah", route: "/informasi/info_sekolah" },
-            { id: 2, title: "Daftar Blog", route: "/informasi/daftar_blog" },
-            { id: 3, title: "Link", route: "/informasi/link_webiste" },
-            { id: 4, title: "Peta Situs", route: "/informasi/peta_situs" },
-            { id: 5, title: "Kontak Sekolah", route: "/informasi/kontak_sekolah" },
-            { id: 6, title: "Agenda", route: "/informasi/agenda" },
-            { id: 7, title: "Berita", route: "/informasi/berita" },
-            { id: 8, title: "Artikel", route: "/informasi/artikel" },
-            { id: 9, title: "Buku Tamu", route: "/informasi/buku_tamu" },
+
+            { id: 2, title: "Kontak Sekolah", route: "/informasi/kontak_sekolah" },
+            { id: 3, title: "Agenda", route: "/informasi/agenda" },
+            { id: 4, title: "Berita", route: "/informasi/berita" },
+            { id: 5, title: "Prestasi", route: "/informasi/prestasi" },
+
         ],
         galeriMenu: [
             { id: 1, title: "Galeri Video", route: "/galeri/galeri_video" },
@@ -324,64 +313,6 @@ export default createStore({
             JURUSAN_PENDIDIKAN_S1_DIV: "",
         },
 
-        // kemitraan: {
-        //     deskripsi:
-        //         "Kemitraan dalam operasionalnya merupakan sebuah kerjasama antara orang atau kelompok orang yang berkomitmen untuk berbagi tanggung jawab untuk mencapai satu tujuan bersama—pendidikan yang bermutu bagi semua, terutama bagi golongan masyarakat miskin. Dalam kerjasama tersebut terdapat berbagai jenjang:",
-        //     header: "Kemitraan dalam pembangunan diimplementasikan dengan menggunakan prinsip PACTS",
-        //     jenjang: [
-        //         {
-        //             judul: "Jaringan (networking):",
-        //             deskripsi:
-        //                 "Berbagi informasi yang dapat membantu mitra untuk bekerja lebih baik.",
-        //         },
-        //         {
-        //             judul: "Koordinasi (coordination):",
-        //             deskripsi:
-        //                 "Berbagi informasi, melakukan penyesuaian agar dapat mengakomodasi yang lain supaya tidak saling konflik.",
-        //         },
-        //         {
-        //             judul: "Kooperasi (cooperation):",
-        //             deskripsi:
-        //                 "Berbagi informasi, melakukan penyesuaian agar dapat mengakomodasi yang lain dan secara nyata ada beberapa aspek pekerjaan yang menjadi tanggung jawab masing-masing.",
-        //         },
-        //         {
-        //             judul: "Kolaborasi (collaboration):",
-        //             deskripsi:
-        //                 "Berbagi informasi, melakukan penyesuaian agar dapat mengakomodasi yang lain, beberapa aspek dari pekerjaan menjadi tanggung jawab masing-masing sesuai bidang keahlian dan akhirnya berbagi hasil bersama.",
-        //         },
-        //     ],
-
-        //     implementasi: [
-
-        //         {
-
-        //             judul: "Partisipasi/Participation:",
-        //             deskripsi:
-        //                 "Semua pihak memiliki kesempatan yang sama untuk menyatakan pendapat, memutuskan hal-hal yang menyangkut nasibnya dan bertanggung jawab atas semua keputusan yang telah disepakati bersama.",
-        //         },
-        //         {
-        //             judul: "Akseptasi/Acceptable:",
-        //             deskripsi:
-        //                 "Saling menerima dengan apa adanya dalam kesetaraan. Masing-masing memiliki fungsinya sendiri-sendiri.",
-        //         },
-        //         {
-        //             judul: "Komunikasi/Communication:",
-        //             deskripsi:
-        //                 "Masing-masing pihak harus mau dan mampu mengkomunikasikan dirinya serta rencana kerjanya sehingga dapat dikoordinasikan dan disinergikan.",
-        //         },
-        //         {
-        //             judul: "Percaya/Trust:",
-        //             deskripsi:
-        //                 "Saling mempercayai dan dapat dipercaya untuk membina kerjasama. Di sini transparansi menjadi tuntutan dan tidak bisa ditawar.",
-        //         },
-        //         {
-        //             judul: "Berbagi/Share:",
-        //             deskripsi:
-        //                 "Semua yang terlibat dalam kemitraan harus mampu membagikan diri dan miliknya (waktu, 'harta', dan kemampuan) untuk mencapai tujuan bersama.",
-        //         },
-        //     ],
-        // },
-
         programKerja: {
             title: "Program Kerja",
             content:
@@ -395,46 +326,7 @@ export default createStore({
             ],
             image: "/logo.png",
         },
-        // kondisiSiswa: {
-        //     title: "Kondisi Siswa",
-        //     content: [
-        //         "Kelas X : 7 kelas : 256 anak",
-        //         "Kelas XI : 3 kelas IPA : 4 kelas IPS : 201 anak",
-        //         "Kelas XII : 3 kelas IPA : 3 kelas IPS : 182 anak",
-        //         "Jumlah : 639 anak",
-        //     ],
 
-        // },
-        // komiteSekolah: {
-        //     title: "Komite Sekolah",
-        //     data: [
-        //         {
-        //             no: 1,
-        //             nama: "RAJAN, S.Pd., S.S., M.Pd.",
-        //             jabatanDinas: "Kepala Sekolah",
-        //             jabatanPengurus: "Penanggung Jawab",
-        //         },
-        //         {
-        //             no: 2,
-        //             nama: "Dalyadi, S.Pd.",
-        //             jabatanDinas: "",
-        //             jabatanPengurus: "Ketua",
-        //         },
-        //     ],
-        // },
-        prestasi: {
-            title: "Prestasi",
-            content:
-                "SMA Negeri 1 Kedungreja Tahun 2016 meraih prestasi:",
-            list: [
-                "Juara 1 OSN Matematika Tingkat Kabupaten Cilacap",
-                "Juara 1 OSN Ekonomi Tingkat Kabupaten Cilacap",
-                "Juara umum Lomba Lintas Alam Tingkat Kabupaten Cilacap",
-                "Juara 3 Karate Tingkat Kabupaten Cilacap",
-                "Juara 2 Membuat Seni Batik Tingkat Kabupaten Cilacap.",
-            ],
-            image: "/logo.png",
-        },
 
         direktoriGuru: [
             {
@@ -647,49 +539,6 @@ export default createStore({
             },
 
         ],
-        // silabus: {
-        //     title: "Silabus",
-        //     image: "/logo.png",
-        //     description: [
-        //         {
-        //             subject: "Pelajaran Biologi, kelas XII",
-        //             downloads: "1080 kali",
-        //             link: "[Download]",
-        //             updated: "16/03/2020 22:24:02",
-        //         },
-        //         {
-        //             subject: "Pelajaran Biologi, kelas XI",
-        //             downloads: "1090 kali",
-        //             link: "[Download]",
-        //             updated: "16/03/2020 22:23:00",
-        //         },
-        //     ],
-        //     footer: "Pahami silabus",
-        // },
-        // materi_ajar: [
-        //     { name: "Akuntansi", link: "#" },
-        //     { name: "Bahasa Indonesia", link: "#" },
-        //     { name: "Bahasa Inggris", link: "#" },
-        //     { name: "Bimbingan dan Konseling", link: "#" },
-        //     { name: "Biologi", link: "#" },
-        //     { name: "Ekonomi", link: "#" },
-        //     { name: "Fisika", link: "#" },
-        //     { name: "Geografi", link: "#" },
-        //     { name: "Kimia", link: "#" },
-        //     { name: "Matematika Peminatan", link: "#" },
-        // ],
-        // materi_uji: [
-        //     { name: "Pemrograman", link: "#" },
-        //     { name: "Bahasa Indonesia", link: "#" },
-        //     { name: "Bahasa Inggris", link: "#" },
-        //     { name: "Bimbingan dan Konseling", link: "#" },
-        //     { name: "Biologi", link: "#" },
-        //     { name: "Ekonomi", link: "#" },
-        //     { name: "Fisika", link: "#" },
-        //     { name: "Geografi", link: "#" },
-        //     { name: "Kimia", link: "#" },
-        //     { name: "Matematika Peminatan", link: "#" },
-        // ],
         kalender: {
             title: "Kalender Akademik",
             image: "/logo.png",
@@ -906,147 +755,6 @@ export default createStore({
 
         ],
         Informasi: {
-            informasi_sekolah: {
-                title: "Informasi Sekolah",
-                image: "/logo.png",
-                list: [
-                    "Perpustakaan Digital",
-                    "Mars SMAN 1 Kedungreja",
-                    "Gambar Sarpas SMAN 1 Kedungreja",
-                    "E-Raport",
-                    "LMS SMAN 1 Kedungreja",
-                    "LMS SMAN 1 Kedungreja.",
-                    "Foto Kondisi SMAN 1 Kedungreja",
-                ]
-            },
-            daftar_blog: {
-                title: "Daftar Blog",
-                data: [
-                    {
-                        no: 1,
-                        nama: "Fatoni",
-                        kelas: "2013",
-                        ketua: "CAMAT",
-                        hits: "1062",
-                    },
-                    {
-                        no: 2,
-                        nama: "Fatoni Sugar",
-                        kelas: "2013",
-                        ketua: "CAMAT",
-                        hits: "1062",
-                    },
-                    {
-                        no: 3,
-                        nama: "Fatoni Sugar",
-                        kelas: "2024",
-                        ketua: "CAMAT",
-                        hits: "1062",
-                    },
-                    {
-                        no: 2,
-                        nama: "Fatoni Sugar",
-                        kelas: "2025",
-                        ketua: "CAMAT",
-                        hits: "1062",
-                    },
-                ],
-            },
-            linkWebsites: [
-                {
-                    title: "Website resmi Dinas Pendidikan Nasional",
-                    url: "http://www.kemdiknas.go.id",
-                },
-                {
-                    title: "Website resmi Kota Bandung",
-                    url: "http://www.bandung.go.id",
-                },
-                {
-                    title: "Website resmi Propinsi Jawa Barat",
-                    url: "http://www.jabar.go.id",
-                },
-                {
-                    title: "Website resmi Dikmenum",
-                    url: "http://www.dikmenum.go.id",
-                },
-                {
-                    title: "Sekolah Kita",
-                    url: "http://sekolah.data.kemdikbud.go.id/index.php/chome/profil/B56...",
-                },
-            ],
-            petaSitus: [
-                {
-                    category: "Profil",
-                    items: [
-                        { title: "Sejarah Singkat", link: "/profil/sejarah-singkat" },
-                        { title: "Visi dan Misi", link: "/profil/visi-misi" },
-                        { title: "Struktur Organisasi", link: "/profil/struktur-organisasi" },
-                        { title: "Program Kerja", link: "/profil/program-kerja" },
-                        // { title: "Kemitraan", link: "/profil/kemitraan" },
-                        { title: "Sarana & Prasarana", link: "/profil/sarana-prasarana" },
-                        // { title: "Kondisi Siswa", link: "/profil/kondisi-siswa" },
-                        { title: "Kepala Sekolah", link: "/profil/kepala-sekolah" },
-                        { title: "Prestasi", link: "/profil/prestasi" },
-                        { title: "Komite Sekolah", link: "/profil/komite-sekolah" },
-                        { title: "Kontak Sekolah", link: "/profil/kontak-sekolah" },
-                    ],
-                },
-                {
-                    category: "Guru",
-                    items: [
-                        { title: "Direktori Guru", link: "/guru/direktori" },
-                        { title: "Silabus", link: "/guru/silabus" },
-                        { title: "Materi Ajar", link: "/guru/materi-ajar" },
-                        { title: "Materi Evaluasi", link: "/guru/materi-evaluasi" },
-                        { title: "Kalender Akademik", link: "/guru/kalender-akademik" },
-                    ],
-                },
-                {
-                    category: "Siswa",
-                    items: [
-                        { title: "Direktori Siswa", link: "/siswa/direktori" },
-                        { title: "Beasiswa", link: "/siswa/beasiswa" },
-                        { title: "OSIS", link: "/siswa/osis" },
-                        { title: "Ekstrakurikuler", link: "/siswa/ekstrakurikuler" },
-                        { title: "Direktori Alumni", link: "/siswa/direktori-alumni" },
-                        { title: "Info Alumni", link: "/siswa/info-alumni" },
-                    ],
-                },
-                {
-                    category: "Informasi",
-                    items: [
-                        { title: "Agenda", link: "/informasi/agenda" },
-                        { title: "Artikel", link: "/informasi/artikel" },
-                        { title: "Info", link: "/informasi/info" },
-                        { title: "Berita", link: "/informasi/berita" },
-                        { title: "Buku Tamu", link: "/informasi/buku-tamu" },
-                        { title: "Daftar Blog", link: "/informasi/daftar-blog" },
-                        { title: "Link", link: "/informasi/link" },
-                        { title: "Peta Situs", link: "/informasi/peta-situs" },
-                    ],
-                },
-                {
-                    category: "Galeri",
-                    items: [
-                        { title: "Galeri Video", link: "/galeri/video" },
-                        { title: "Galeri Foto", link: "/galeri/foto" },
-                    ],
-                },
-                {
-                    category: "Peta Situs Komunitas Sekolah (Member)",
-                    items: [
-                        { title: "Profil Member", link: "/member/profil" },
-                        { title: "Data Kontak", link: "/member/kontak" },
-                        { title: "Anggota", link: "/member/anggota" },
-                        { title: "Pesan", link: "/member/pesan" },
-                        { title: "Chat", link: "/member/chat" },
-                        { title: "Opini", link: "/member/opini" },
-                        { title: "Diskusi", link: "/member/diskusi" },
-                        { title: "Info Alumni", link: "/member/info-alumni" },
-                        { title: "Materi Ajar", link: "/member/materi-ajar" },
-                    ],
-                },
-            ],
             agenda: [
                 {
                     title: "Study Tour",
@@ -1159,7 +867,20 @@ export default createStore({
 
 
             ],
-            bukuTamu: [],
+            prestasi: {
+                title: "Prestasi",
+                content:
+                    "SMA Negeri 1 Kedungreja Tahun 2016 meraih prestasi:",
+                list: [
+                    "Juara 1 OSN Matematika Tingkat Kabupaten Cilacap",
+                    "Juara 1 OSN Ekonomi Tingkat Kabupaten Cilacap",
+                    "Juara umum Lomba Lintas Alam Tingkat Kabupaten Cilacap",
+                    "Juara 3 Karate Tingkat Kabupaten Cilacap",
+                    "Juara 2 Membuat Seni Batik Tingkat Kabupaten Cilacap.",
+                ],
+                image: "/logo.png",
+            },
+
         },
 
         videos: [
@@ -1241,6 +962,7 @@ export default createStore({
         getArtikel: (state) => state.Informasi.artikel,
         getBerita: (state) => state.Informasi.berita,
         getAgenda: (state) => state.Informasi.agenda,
+        getPrestasi: (state) => state.Informasi.prestasi,
         getPetaSitus: (state) => state.Informasi.petaSitus,
         getLinkWebsites: (state) => state.Informasi.linkWebsites,
         getDaftarBlog: (state) => state.Informasi.daftar_blog,
@@ -1250,19 +972,14 @@ export default createStore({
         },
         getDirektoriSiswa: (state) => state.direktoriSiswa,
         getKalender: (state) => state.kalender,
-        getMateriUji: (state) => state.materi_uji,
-        getMateriAjar: (state) => state.materi_ajar,
-        getSilabus: (state) => state.silabus,
+
         getDirektoriGuru: (state) => state.direktoriGuru,
         getGuruById: (state) => (id) => {
             return state.direktoriGuru.find((guru) => guru.id === id);
         },
         getDirektoriGuru: (state) => state.direktoriGuru,
-        getPrestasi: (state) => state.prestasi,
-        // getKomiteSekolah: (state) => state.komiteSekolah,
         getKondisiSiswa: (state) => state.kondisiSiswa,
         getProgramKerja: (state) => state.programKerja,
-        // getKemitraan: (state) => state.kemitraan,
         getKepalaSekolah: (state) => state.kepala_sekolah,
         getDaftarRuang: (state) => state.daftar_ruang,
         getSaranaPrasarana: (state) => state.sarana_prasarana,
