@@ -53,56 +53,12 @@ export default createStore({
             },
         ],
         photos: [
-            { id: 1, title: "Perpustakaan Digital", src: "/artikel 1.jpg" },
+            { id: 1, title: "Ruangan", src: "/gallery/ruangan.jpg" },
             { id: 2, title: "Upacara Bendera", src: "/artikel2.jpg" },
-            { id: 3, title: "Lomba Sekolah", src: "/artikel3.png" },
-        ],
-        // videos: [
-        //     {
-        //         id: 1,
-        //         title: "Uji Coba SPMB PROV Jateng",
-        //         src: "https://www.youtube.com/embed/1La4QzGeaaQ",
-        //     },
-        //     {
-        //         id: 2,
-        //         title: "Pentas Seni",
-        //         src: "https://www.youtube.com/embed/2La4QzGeaaQ",
-        //     },
-        //     {
-        //         id: 3,
-        //         title: "Lomba Olahraga",
-        //         src: "https://www.youtube.com/embed/3La4QzGeaaQ",
-        //     },
-        // ],
-        news: [
-            {
-                id: 1,
-                title: 'Lomba Bapak Ibu Guru',
-                description: 'Lomba kreativitas untuk bapak ibu guru SMA Negeri 1 Kedungreja',
-                date: '15 April 2025',
-                image: '/news1.png'
-            },
-            {
-                id: 2,
-                title: 'Lomba Pakaian Daur Ulang',
-                description: 'Ajang kreativitas siswa dengan memanfaatkan bahan daur ulang',
-                date: '20 April 2025',
-                image: '/news2.jpg'
-            },
-            {
-                id: 3,
-                title: 'Lomba Seni',
-                description: 'Pentas seni dan budaya siswa SMA Negeri 1 Kedungreja',
-                date: '25 April 2025',
-                image: '/news3.jpg'
-            },
-            {
-                id: 4,
-                title: 'Lomba Seni',
-                description: 'Pentas seni dan budaya siswa SMA Negeri 1 Kedungreja',
-                date: '25 April 2025',
-                image: '/news3.jpg'
-            },
+            { id: 3, title: "Lomba Sekolah", src: "/gallery/lomba.jpg" },
+            { id: 4, title: "Pramuka", src: "/gallery/pramuka.jpg" },
+            { id: 5, title: "Hari Guru", src: "/gallery/ucapan.jpg" },
+            { id: 6, title: "Paskibraka", src: "/gallery/paskibra.jpg" },
         ],
         profileMenu: [
             { id: 1, title: "Visi Misi", route: "/profil/visi-misi" },
@@ -110,10 +66,10 @@ export default createStore({
             { id: 3, title: "Sarana Prasarana", route: "/profil/sarana_prasarana" },
             { id: 4, title: "Struktur Organisasi", route: "/profil/struktur_organisasi" },
             { id: 5, title: "Kepala Sekola", route: "/profil/kepala_sekolah" },
-            { id: 6, title: "Kemitraan", route: "/profil/kemitraan" },
+            // { id: 6, title: "Kemitraan", route: "/profil/kemitraan" },
             { id: 7, title: "Program Kerja", route: "/profil/program_kerja" },
-            { id: 8, title: "Kondisi Siswa", route: "/profil/kondisi_siswa" },
-            { id: 8, title: "Komite Sekolah", route: "/profil/komite_sekolah" },
+            // { id: 8, title: "Kondisi Siswa", route: "/profil/kondisi_siswa" },
+            // { id: 8, title: "Komite Sekolah", route: "/profil/komite_sekolah" },
             { id: 8, title: "Prestasi", route: "/profil/prestasi" },
         ],
         guruMenu: [
@@ -368,63 +324,63 @@ export default createStore({
             JURUSAN_PENDIDIKAN_S1_DIV: "",
         },
 
-        kemitraan: {
-            deskripsi:
-                "Kemitraan dalam operasionalnya merupakan sebuah kerjasama antara orang atau kelompok orang yang berkomitmen untuk berbagi tanggung jawab untuk mencapai satu tujuan bersama—pendidikan yang bermutu bagi semua, terutama bagi golongan masyarakat miskin. Dalam kerjasama tersebut terdapat berbagai jenjang:",
-            header: "Kemitraan dalam pembangunan diimplementasikan dengan menggunakan prinsip PACTS",
-            jenjang: [
-                {
-                    judul: "Jaringan (networking):",
-                    deskripsi:
-                        "Berbagi informasi yang dapat membantu mitra untuk bekerja lebih baik.",
-                },
-                {
-                    judul: "Koordinasi (coordination):",
-                    deskripsi:
-                        "Berbagi informasi, melakukan penyesuaian agar dapat mengakomodasi yang lain supaya tidak saling konflik.",
-                },
-                {
-                    judul: "Kooperasi (cooperation):",
-                    deskripsi:
-                        "Berbagi informasi, melakukan penyesuaian agar dapat mengakomodasi yang lain dan secara nyata ada beberapa aspek pekerjaan yang menjadi tanggung jawab masing-masing.",
-                },
-                {
-                    judul: "Kolaborasi (collaboration):",
-                    deskripsi:
-                        "Berbagi informasi, melakukan penyesuaian agar dapat mengakomodasi yang lain, beberapa aspek dari pekerjaan menjadi tanggung jawab masing-masing sesuai bidang keahlian dan akhirnya berbagi hasil bersama.",
-                },
-            ],
+        // kemitraan: {
+        //     deskripsi:
+        //         "Kemitraan dalam operasionalnya merupakan sebuah kerjasama antara orang atau kelompok orang yang berkomitmen untuk berbagi tanggung jawab untuk mencapai satu tujuan bersama—pendidikan yang bermutu bagi semua, terutama bagi golongan masyarakat miskin. Dalam kerjasama tersebut terdapat berbagai jenjang:",
+        //     header: "Kemitraan dalam pembangunan diimplementasikan dengan menggunakan prinsip PACTS",
+        //     jenjang: [
+        //         {
+        //             judul: "Jaringan (networking):",
+        //             deskripsi:
+        //                 "Berbagi informasi yang dapat membantu mitra untuk bekerja lebih baik.",
+        //         },
+        //         {
+        //             judul: "Koordinasi (coordination):",
+        //             deskripsi:
+        //                 "Berbagi informasi, melakukan penyesuaian agar dapat mengakomodasi yang lain supaya tidak saling konflik.",
+        //         },
+        //         {
+        //             judul: "Kooperasi (cooperation):",
+        //             deskripsi:
+        //                 "Berbagi informasi, melakukan penyesuaian agar dapat mengakomodasi yang lain dan secara nyata ada beberapa aspek pekerjaan yang menjadi tanggung jawab masing-masing.",
+        //         },
+        //         {
+        //             judul: "Kolaborasi (collaboration):",
+        //             deskripsi:
+        //                 "Berbagi informasi, melakukan penyesuaian agar dapat mengakomodasi yang lain, beberapa aspek dari pekerjaan menjadi tanggung jawab masing-masing sesuai bidang keahlian dan akhirnya berbagi hasil bersama.",
+        //         },
+        //     ],
 
-            implementasi: [
+        //     implementasi: [
 
-                {
+        //         {
 
-                    judul: "Partisipasi/Participation:",
-                    deskripsi:
-                        "Semua pihak memiliki kesempatan yang sama untuk menyatakan pendapat, memutuskan hal-hal yang menyangkut nasibnya dan bertanggung jawab atas semua keputusan yang telah disepakati bersama.",
-                },
-                {
-                    judul: "Akseptasi/Acceptable:",
-                    deskripsi:
-                        "Saling menerima dengan apa adanya dalam kesetaraan. Masing-masing memiliki fungsinya sendiri-sendiri.",
-                },
-                {
-                    judul: "Komunikasi/Communication:",
-                    deskripsi:
-                        "Masing-masing pihak harus mau dan mampu mengkomunikasikan dirinya serta rencana kerjanya sehingga dapat dikoordinasikan dan disinergikan.",
-                },
-                {
-                    judul: "Percaya/Trust:",
-                    deskripsi:
-                        "Saling mempercayai dan dapat dipercaya untuk membina kerjasama. Di sini transparansi menjadi tuntutan dan tidak bisa ditawar.",
-                },
-                {
-                    judul: "Berbagi/Share:",
-                    deskripsi:
-                        "Semua yang terlibat dalam kemitraan harus mampu membagikan diri dan miliknya (waktu, 'harta', dan kemampuan) untuk mencapai tujuan bersama.",
-                },
-            ],
-        },
+        //             judul: "Partisipasi/Participation:",
+        //             deskripsi:
+        //                 "Semua pihak memiliki kesempatan yang sama untuk menyatakan pendapat, memutuskan hal-hal yang menyangkut nasibnya dan bertanggung jawab atas semua keputusan yang telah disepakati bersama.",
+        //         },
+        //         {
+        //             judul: "Akseptasi/Acceptable:",
+        //             deskripsi:
+        //                 "Saling menerima dengan apa adanya dalam kesetaraan. Masing-masing memiliki fungsinya sendiri-sendiri.",
+        //         },
+        //         {
+        //             judul: "Komunikasi/Communication:",
+        //             deskripsi:
+        //                 "Masing-masing pihak harus mau dan mampu mengkomunikasikan dirinya serta rencana kerjanya sehingga dapat dikoordinasikan dan disinergikan.",
+        //         },
+        //         {
+        //             judul: "Percaya/Trust:",
+        //             deskripsi:
+        //                 "Saling mempercayai dan dapat dipercaya untuk membina kerjasama. Di sini transparansi menjadi tuntutan dan tidak bisa ditawar.",
+        //         },
+        //         {
+        //             judul: "Berbagi/Share:",
+        //             deskripsi:
+        //                 "Semua yang terlibat dalam kemitraan harus mampu membagikan diri dan miliknya (waktu, 'harta', dan kemampuan) untuk mencapai tujuan bersama.",
+        //         },
+        //     ],
+        // },
 
         programKerja: {
             title: "Program Kerja",
@@ -439,33 +395,33 @@ export default createStore({
             ],
             image: "/logo.png",
         },
-        kondisiSiswa: {
-            title: "Kondisi Siswa",
-            content: [
-                "Kelas X : 7 kelas : 256 anak",
-                "Kelas XI : 3 kelas IPA : 4 kelas IPS : 201 anak",
-                "Kelas XII : 3 kelas IPA : 3 kelas IPS : 182 anak",
-                "Jumlah : 639 anak",
-            ],
+        // kondisiSiswa: {
+        //     title: "Kondisi Siswa",
+        //     content: [
+        //         "Kelas X : 7 kelas : 256 anak",
+        //         "Kelas XI : 3 kelas IPA : 4 kelas IPS : 201 anak",
+        //         "Kelas XII : 3 kelas IPA : 3 kelas IPS : 182 anak",
+        //         "Jumlah : 639 anak",
+        //     ],
 
-        },
-        komiteSekolah: {
-            title: "Komite Sekolah",
-            data: [
-                {
-                    no: 1,
-                    nama: "RAJAN, S.Pd., S.S., M.Pd.",
-                    jabatanDinas: "Kepala Sekolah",
-                    jabatanPengurus: "Penanggung Jawab",
-                },
-                {
-                    no: 2,
-                    nama: "Dalyadi, S.Pd.",
-                    jabatanDinas: "",
-                    jabatanPengurus: "Ketua",
-                },
-            ],
-        },
+        // },
+        // komiteSekolah: {
+        //     title: "Komite Sekolah",
+        //     data: [
+        //         {
+        //             no: 1,
+        //             nama: "RAJAN, S.Pd., S.S., M.Pd.",
+        //             jabatanDinas: "Kepala Sekolah",
+        //             jabatanPengurus: "Penanggung Jawab",
+        //         },
+        //         {
+        //             no: 2,
+        //             nama: "Dalyadi, S.Pd.",
+        //             jabatanDinas: "",
+        //             jabatanPengurus: "Ketua",
+        //         },
+        //     ],
+        // },
         prestasi: {
             title: "Prestasi",
             content:
@@ -691,49 +647,49 @@ export default createStore({
             },
 
         ],
-        silabus: {
-            title: "Silabus",
-            image: "/logo.png",
-            description: [
-                {
-                    subject: "Pelajaran Biologi, kelas XII",
-                    downloads: "1080 kali",
-                    link: "[Download]",
-                    updated: "16/03/2020 22:24:02",
-                },
-                {
-                    subject: "Pelajaran Biologi, kelas XI",
-                    downloads: "1090 kali",
-                    link: "[Download]",
-                    updated: "16/03/2020 22:23:00",
-                },
-            ],
-            footer: "Pahami silabus",
-        },
-        materi_ajar: [
-            { name: "Akuntansi", link: "#" },
-            { name: "Bahasa Indonesia", link: "#" },
-            { name: "Bahasa Inggris", link: "#" },
-            { name: "Bimbingan dan Konseling", link: "#" },
-            { name: "Biologi", link: "#" },
-            { name: "Ekonomi", link: "#" },
-            { name: "Fisika", link: "#" },
-            { name: "Geografi", link: "#" },
-            { name: "Kimia", link: "#" },
-            { name: "Matematika Peminatan", link: "#" },
-        ],
-        materi_uji: [
-            { name: "Pemrograman", link: "#" },
-            { name: "Bahasa Indonesia", link: "#" },
-            { name: "Bahasa Inggris", link: "#" },
-            { name: "Bimbingan dan Konseling", link: "#" },
-            { name: "Biologi", link: "#" },
-            { name: "Ekonomi", link: "#" },
-            { name: "Fisika", link: "#" },
-            { name: "Geografi", link: "#" },
-            { name: "Kimia", link: "#" },
-            { name: "Matematika Peminatan", link: "#" },
-        ],
+        // silabus: {
+        //     title: "Silabus",
+        //     image: "/logo.png",
+        //     description: [
+        //         {
+        //             subject: "Pelajaran Biologi, kelas XII",
+        //             downloads: "1080 kali",
+        //             link: "[Download]",
+        //             updated: "16/03/2020 22:24:02",
+        //         },
+        //         {
+        //             subject: "Pelajaran Biologi, kelas XI",
+        //             downloads: "1090 kali",
+        //             link: "[Download]",
+        //             updated: "16/03/2020 22:23:00",
+        //         },
+        //     ],
+        //     footer: "Pahami silabus",
+        // },
+        // materi_ajar: [
+        //     { name: "Akuntansi", link: "#" },
+        //     { name: "Bahasa Indonesia", link: "#" },
+        //     { name: "Bahasa Inggris", link: "#" },
+        //     { name: "Bimbingan dan Konseling", link: "#" },
+        //     { name: "Biologi", link: "#" },
+        //     { name: "Ekonomi", link: "#" },
+        //     { name: "Fisika", link: "#" },
+        //     { name: "Geografi", link: "#" },
+        //     { name: "Kimia", link: "#" },
+        //     { name: "Matematika Peminatan", link: "#" },
+        // ],
+        // materi_uji: [
+        //     { name: "Pemrograman", link: "#" },
+        //     { name: "Bahasa Indonesia", link: "#" },
+        //     { name: "Bahasa Inggris", link: "#" },
+        //     { name: "Bimbingan dan Konseling", link: "#" },
+        //     { name: "Biologi", link: "#" },
+        //     { name: "Ekonomi", link: "#" },
+        //     { name: "Fisika", link: "#" },
+        //     { name: "Geografi", link: "#" },
+        //     { name: "Kimia", link: "#" },
+        //     { name: "Matematika Peminatan", link: "#" },
+        // ],
         kalender: {
             title: "Kalender Akademik",
             image: "/logo.png",
@@ -1026,9 +982,9 @@ export default createStore({
                         { title: "Visi dan Misi", link: "/profil/visi-misi" },
                         { title: "Struktur Organisasi", link: "/profil/struktur-organisasi" },
                         { title: "Program Kerja", link: "/profil/program-kerja" },
-                        { title: "Kemitraan", link: "/profil/kemitraan" },
+                        // { title: "Kemitraan", link: "/profil/kemitraan" },
                         { title: "Sarana & Prasarana", link: "/profil/sarana-prasarana" },
-                        { title: "Kondisi Siswa", link: "/profil/kondisi-siswa" },
+                        // { title: "Kondisi Siswa", link: "/profil/kondisi-siswa" },
                         { title: "Kepala Sekolah", link: "/profil/kepala-sekolah" },
                         { title: "Prestasi", link: "/profil/prestasi" },
                         { title: "Komite Sekolah", link: "/profil/komite-sekolah" },
@@ -1112,82 +1068,95 @@ export default createStore({
             berita: [
                 {
                     title: "Lomba Bapak Ibu",
-                    description: "Lomba makan krupuk dan volly",
+                    description: "Lomba Bapak Ibu Ulang SMAN 1 Kedungreja",
                     date: "08/16/2022",
                     icon: "/news1.png",
+                    content: `
+                    <p style="text-align: justify; margin-bottom: 16px;">
+                      Lomba Bapak Ibu diadakan untuk memeriahkan hari kemerdekaan RI ke-77 di SMAN 1 Kedungreja.
+                      Kegiatan ini meliputi lomba makan krupuk dan pertandingan voli antar guru dan staf sekolah.
+                      Suasana sangat meriah dengan partisipasi dan semangat dari semua peserta.
+                    </p>
+                    <p style="text-align: justify; margin-bottom: 16px;">
+                    Selasa, 16 Agustus 2022, para guru dan staf mengenakan seragam olahraga merah dan hitam, dengan semangat tinggi mengikuti setiap rangkaian kegiatan. Terlihat tawa dan sorakan memenuhi halaman sekolah saat peserta berusaha keras menghabiskan krupuk yang tergantung dan bertanding voli dengan semangat sportif. Kegiatan ini menjadi momen kebersamaan yang mempererat tali silaturahmi antar civitas sekolah sekaligus memperingati Hari Kemerdekaan Republik Indonesia dengan penuh sukacita.
+                    </p>
+                     
+                     <p style="text-align: justify">
+                    Panitia lomba pun memberikan hadiah simbolis berupa bingkisan kecil kepada para pemenang sebagai bentuk penghargaan. Momen ini ditutup dengan sesi foto bersama yang diiringi senyum puas dari seluruh peserta. Harapannya, kegiatan semacam ini dapat terus dilaksanakan setiap tahunnya sebagai bagian dari tradisi sekolah dalam memperingati hari-hari besar nasional.
+                    </p>
+                   
+                    
+                  `,
                 },
                 {
                     title: "Lomba Pakaean Daur Ulang",
                     description: "Lomba Pakaean Daur Ulang SMAN 1 Kedungreja",
                     date: "08/16/2022",
-                    icon: "/news2.jpg",
+                    icon: "/berita/berita2.jpg",
+                    content: `
+                    <p style="text-align: justify; margin-bottom: 16px;">
+                      Lomba pakaian daur ulang di SMAN 1 Kedungreja diselenggarakan sebagai bagian dari kampanye kesadaran lingkungan dan peningkatan kreativitas siswa. Kegiatan ini bertujuan untuk menanamkan nilai kepedulian terhadap sampah dan pentingnya pemanfaatan kembali barang bekas menjadi sesuatu yang bernilai guna. Para siswa diajak untuk berpikir kritis dan inovatif dalam mengubah limbah menjadi karya seni dalam bentuk busana.
+                    </p>
+
+                    <p style="text-align: justify; margin-bottom: 16px;">
+                    Sebelum hari pelaksanaan, siswa diberi waktu untuk merancang dan membuat pakaian dari berbagai bahan bekas seperti plastik, kertas koran, kardus, hingga kantong kresek. Proses ini melibatkan kerja sama tim antar kelas serta bimbingan dari guru pendamping. Seluruh rancangan dikerjakan dengan penuh antusiasme dan ide-ide unik yang mencerminkan karakter serta pesan moral dari tiap kelompok.
+                    </p>
+
+                    <p style="text-align: justify; margin-bottom: 16px;">
+                    Pada hari lomba, para peserta tampil percaya diri dalam parade busana daur ulang yang diselenggarakan di lapangan sekolah. Tiap siswa berjalan di "catwalk" sederhana yang telah disiapkan, sambil memperagakan pakaian hasil kreasi mereka. Sorak sorai dari siswa lainnya turut memeriahkan acara, menciptakan suasana kompetitif namun tetap menyenangkan. Dewan juri menilai dari aspek kreativitas, ketepatan tema, dan presentasi.
+                    </p>
+                    <p style="text-align: justify; margin-bottom: 16px;">
+                    Melalui kegiatan ini, siswa tidak hanya belajar tentang pentingnya menjaga lingkungan, tetapi juga tentang nilai kerja keras, kolaborasi, dan keberanian tampil di depan umum. Harapannya, lomba ini dapat menjadi inspirasi bagi siswa untuk terus peduli terhadap isu lingkungan sekaligus mengasah kemampuan berpikir kreatif dalam menghadapi tantangan global masa depan.
+                    </p>
+                  `,
                 },
                 {
                     title: "Lomba Seni",
                     description: "Dalam rangka peringatan HUT RI ke-77 SMAN 1 Kedungreja mengadakan lomba Seni",
                     date: "08/16/2022",
                     icon: "/news3.jpg",
+                    content: `
+                    <p style="text-align: justify; margin-bottom: 16px;">
+                      SMAN 1 Kedungreja mengadakan lomba seni yang meliputi tari, musik, dan drama sebagai wadah ekspresi dan unjuk bakat bagi para siswa. Kegiatan ini menjadi ajang penting dalam menggali potensi seni yang dimiliki oleh siswa, sekaligus mempererat rasa cinta terhadap budaya Indonesia. Lomba ini juga bertujuan untuk meningkatkan kepercayaan diri siswa melalui penampilan di hadapan publik.
+                    </p>
+
+                    <p style="text-align: justify; margin-bottom: 16px;">
+                    Setiap kelas atau perwakilan kelompok menampilkan pertunjukan seni yang telah mereka persiapkan dengan serius. Dalam lomba tari, siswa membawakan berbagai tarian tradisional dari daerah-daerah di Indonesia dengan kostum dan gerakan yang memukau. Untuk kategori musik, siswa menyanyikan lagu daerah maupun lagu modern dengan iringan alat musik, baik akustik maupun digital.
+                    </p>
+
+                    <p style="text-align: justify; margin-bottom: 16px;">
+                    Sementara itu, penampilan drama menghadirkan cerita-cerita yang sarat nilai moral dan sosial, yang dikemas dalam alur yang menghibur dan penuh pesan. Para siswa menunjukkan kemampuan akting, penguasaan dialog, dan kerjasama tim yang luar biasa. Penampilan mereka disambut antusias oleh penonton yang terdiri dari siswa, guru, dan staf sekolah.
+                    </p>
+
+                    <p style="text-align: justify; margin-bottom: 16px;">
+                    Kegiatan lomba seni ini tidak hanya menjadi sarana hiburan, tetapi juga mendorong pengembangan karakter siswa, khususnya dalam hal apresiasi seni, kedisiplinan, dan kerja sama. Diharapkan melalui acara seperti ini, bakat-bakat terpendam di bidang seni dapat terus diasah dan berkembang, serta memberikan semangat baru bagi siswa untuk terus berkarya secara positif.
+                    </p>
+                  `,
                 },
                 {
                     title: "Karnaval SMAN 1 Kedungreja",
-                    description:
-                        "Dalam rangka memperingati HUT RI Ke-77 SMAN 1 Kedungreja mengadakan karnaval pembangunan",
+                    description: "Dalam rangka memperingati HUT RI Ke-77 SMAN 1 Kedungreja mengadakan karnaval pembangunan",
                     date: "08/15/2022",
-                    icon: "/news3.jpg",
+                    icon: "/berita/berita1.jpg",
+                    content: `
+                    <p style="text-align: justify; margin-bottom: 16px;">
+                     SMAN 1 Kedungreja turut memeriahkan HUT RI ke-77 dengan menyelenggarakan Karnaval Pembangunan yang meriah dan penuh makna. Kegiatan ini menjadi bentuk partisipasi aktif sekolah dalam memperingati hari kemerdekaan sekaligus menyampaikan pesan penting mengenai pembangunan nasional. Karnaval ini tidak hanya menjadi hiburan, tetapi juga sarana edukasi bagi masyarakat sekitar.
+                     </p>
+
+                    <p style="text-align: justify; margin-bottom: 16px;">
+                    Karnaval pembangunan diikuti oleh seluruh siswa, guru, dan staf dengan antusiasme yang tinggi. Setiap rombongan mengenakan kostum bertema kemerdekaan dan pembangunan, serta membawa miniatur hasil karya siswa seperti replika gedung, jembatan, hingga alat transportasi sebagai simbol kemajuan bangsa. Seluruh peserta berkeliling desa-desa sekitar sekolah dengan semangat dan keceriaan.
+                    </p>
+
+                    <p style="text-align: justify; margin-bottom: 16px;">
+                    Masyarakat sekitar menyambut karnaval dengan antusias, berdiri di pinggir jalan untuk menyaksikan parade yang penuh warna dan kreativitas. Selain itu, karnaval ini menjadi ajang mempererat hubungan antara sekolah dan warga sekitar, menciptakan suasana kebersamaan dan semangat gotong royong. Berbagai pertunjukan juga ditampilkan di titik-titik tertentu sebagai bagian dari rangkaian acara.
+                    </p>
+
+                    <p style="text-align: justify; margin-bottom: 16px;">
+                    Melalui Karnaval Pembangunan ini, SMAN 1 Kedungreja berharap dapat menanamkan nilai cinta tanah air, kepedulian terhadap pembangunan, serta membentuk karakter siswa yang kreatif dan peduli terhadap lingkungan sekitar. Kegiatan ini menjadi simbol semangat kemerdekaan yang tidak hanya dirayakan, tetapi juga dihayati melalui aksi nyata yang mendidik dan membangun.
+                    </p>
+                  `,
                 },
-                {
-                    title: "JADWAL PPDB 2022",
-                    description: "JADWAL PPDB SMAN 1 Kedungreja tahun 2022",
-                    date: "06/18/2022",
-                    icon: "/news3.jpg",
-                },
-                {
-                    title: "PESERTA OSNK H1",
-                    description: "PESERTA OSNK H1 SMAN 1 Kedungreja",
-                    date: "05/24/2022",
-                    icon: "/news3.jpg",
-                },
-                {
-                    title: "BAGI TAKJIL SMAN 1 KEDUNGREJA 1443 H",
-                    description:
-                        "Kegiatan bagi-bagi takjil ke masyarakat sekitar SMAN 1 Kedungreja",
-                    date: "04/27/2022",
-                    icon: "/news3.jpg",
-                },
-                {
-                    title: "LMS SMAN 1 KEDUNGREJA",
-                    description:
-                        "Sebagai peningkatan pembelajaran di era teknologi komputer dengan ini SMAN 1 kedungreja menggunakan Learning...",
-                    date: "04/01/2022",
-                    icon: "/news3.jpg",
-                },
-                {
-                    title: "INFO PPDB",
-                    description:
-                        "Ayo kita bergabung di keluarga besar SMA Negeri 1 Kedungreja dengan datang ke SMAN 1 Kedungreja atau mengisi link ini...",
-                    date: "04/01/2022",
-                    icon: "/news3.jpg",
-                },
-            ],
-            artikel: [
-                {
-                    title: "Perpustakaan Digital",
-                    description: "PERPUSTAKAAN DIGITAL SMAN 1 KEDUNGREJA",
-                    date: "08/16/2022",
-                    icon: "/artikel 1.jpg",
-                },
-                {
-                    title: "LMS SMAN 1 Kedungreja",
-                    description: "https://lib.sman1kedungreja.sch.id/login/index.php ",
-                    date: "08/16/2022",
-                    icon: "/artikel2.jpg",
-                },
-                {
-                    title: "Website Biologi SMAN 1 Kedungreja",
-                    description: "https://sites.google.com/guru.sma.belajar.id/biologisman1kdr ",
-                    date: "08/16/2022",
-                    icon: "/artikel3.png",
-                },
+
 
             ],
             bukuTamu: [],
@@ -1290,10 +1259,10 @@ export default createStore({
         },
         getDirektoriGuru: (state) => state.direktoriGuru,
         getPrestasi: (state) => state.prestasi,
-        getKomiteSekolah: (state) => state.komiteSekolah,
+        // getKomiteSekolah: (state) => state.komiteSekolah,
         getKondisiSiswa: (state) => state.kondisiSiswa,
         getProgramKerja: (state) => state.programKerja,
-        getKemitraan: (state) => state.kemitraan,
+        // getKemitraan: (state) => state.kemitraan,
         getKepalaSekolah: (state) => state.kepala_sekolah,
         getDaftarRuang: (state) => state.daftar_ruang,
         getSaranaPrasarana: (state) => state.sarana_prasarana,

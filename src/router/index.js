@@ -9,10 +9,7 @@ import SaranaPrasarana from '@/views/profile/SaranaPrasarana.vue'
 import SaranaPrasaranaDetail from '@/views/profile/SaranaPrasaranaDetail.vue'
 import Struktur_Organisasi from '@/views/profile/Struktur_Organisasi.vue'
 import KepalaSekolah from '@/views/profile/KepalaSekolah.vue'
-import Kemitraan from '@/views/profile/Kemitraan.vue'
 import ProgramKerja from '@/views/profile/ProgramKerja.vue'
-import KondisiSiswa from '@/views/profile/KondisiSiswa.vue'
-import KomiteSekolah from '@/views/profile/KomiteSekolah.vue'
 import Prestasi from '@/views/profile/Prestasi.vue'
 import DirektoriGuru from '@/views/guru/DirektoriGuru.vue'
 import GuruView from '@/views/GuruView.vue'
@@ -41,6 +38,7 @@ import GaleriVideo from '@/views/galleri/GaleriVideo.vue'
 import GaleriFoto from '@/views/galleri/GaleriFoto.vue'
 import GaleriVideoDetail from '@/views/galleri/GaleriVideoDetail.vue'
 import GaleriFotoDetail from '@/views/galleri/GaleriFotoDetail.vue'
+import BeritaDetail from '@/views/informasi/BeritaDetail.vue'
 
 const routes = [
     {
@@ -88,24 +86,9 @@ const routes = [
                         component: KepalaSekolah
                     },
                     {
-                        path: "kemitraan",
-                        name: "kemitraan",
-                        component: Kemitraan
-                    },
-                    {
                         path: "program_kerja",
                         name: "program_kerja",
                         component: ProgramKerja
-                    },
-                    {
-                        path: "kondisi_siswa",
-                        name: "kondisi_siswa",
-                        component: KondisiSiswa
-                    },
-                    {
-                        path: "komite_sekolah",
-                        name: "komite_sekolah",
-                        component: KomiteSekolah
                     },
                     {
                         path: "prestasi",
@@ -220,6 +203,12 @@ const routes = [
                         component: Berita,
                     },
                     {
+                        path: '/berita/:index',
+                        name: 'berita_detail',
+                        component: BeritaDetail,
+                        props: true,
+                    },
+                    {
                         path: 'artikel',
                         name: 'artikel',
                         component: Artikel,
@@ -273,8 +262,12 @@ const routes = [
 ]
 
 const router = createRouter({
-    history: createWebHistory(),
-    routes
+    history: createWebHistory(import.meta.env.BASE_URL),
+    routes,
+    scrollBehavior(to, from, savedPosition) {
+        // selalu scroll ke atas saat navigasi
+        return { top: 0 }
+    }
 })
 
 export default router

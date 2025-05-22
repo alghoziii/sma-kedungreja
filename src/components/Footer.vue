@@ -42,16 +42,19 @@ const schoolInfo = computed(() => {
         <!-- Menu -->
         <div class="flex flex-col items-center md:items-start">
           <h3 class="text-xl font-bold mb-4 w-full text-center md:text-left">
-            MENU
+            Profile Sekolah
           </h3>
           <ul class="space-y-2 text-center md:text-left">
-            <li><a href="#" class="hover:text-yellow-300">Pendaftaran</a></li>
-            <li>
-              <a href="#" class="hover:text-yellow-300">Profil Sekolah</a>
-            </li>
-            <li><a href="#" class="hover:text-yellow-300">Login</a></li>
-            <li><a href="#" class="hover:text-yellow-300">Wisuda</a></li>
-            <li><a href="#" class="hover:text-yellow-300">Repository</a></li>
+
+            
+
+            <li><router-link to="/profil/visi-misi" class="hover:text-yellow-300">Visi Misi</router-link></li>
+            <li><router-link to="/profil/sejarah" class="hover:text-yellow-300">Sejarah</router-link></li>
+            <li><router-link to="/profil/sarana_prasarana" class="hover:text-yellow-300">Sarana dan Prasarana</router-link></li>
+            <li><router-link to="/profil/struktur_organisasi" class="hover:text-yellow-300">Struktur Organisasi</router-link></li>
+            <li><router-link to="/profil/program_kerja" class="hover:text-yellow-300">Program Kerja</router-link></li>
+            <li><router-link to="/profil/prestasi" class="hover:text-yellow-300">Prestasti</router-link></li>
+          
           </ul>
         </div>
 

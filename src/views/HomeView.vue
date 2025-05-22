@@ -6,32 +6,32 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { ref, computed } from "vue";
 import { useStore } from "vuex";
-import NewsCard from "@/components/NewsCard.vue";
+import { useRouter } from "vue-router";
 import Sidebar from "@/components/Sidebar.vue";
 
 export default {
   components: {
     Swiper,
     SwiperSlide,
-    NewsCard,
     Sidebar,
   },
   setup() {
     const store = useStore();
+    const router = useRouter();
 
     const modules = [Autoplay, Navigation, Pagination];
 
     // Access Vuex store data
+    const berita = computed(() => store.getters.getBerita);
     const schoolInfo = computed(() => store.getters.getSchoolInfo);
-    const newsItems = computed(() => store.getters.getNews);
     const photoGallery = computed(() => store.getters.getPhotos);
     const videoGallery = computed(() => store.getters.getVideos);
+    const stats = computed(() => store.getters.getStats); // jika Sidebar pakai props stats
 
-    // Swiper instances for photos and videos
+    // Swiper instances
     const photoSwiper = ref(null);
     const videoSwiper = ref(null);
 
-    // Handlers to set Swiper instances
     const setPhotoSwiper = (swiperInstance) => {
       photoSwiper.value = swiperInstance;
     };
@@ -39,7 +39,6 @@ export default {
       videoSwiper.value = swiperInstance;
     };
 
-    // Navigation handlers for photo slides
     const nextPhotoSlide = () => {
       if (photoSwiper.value) {
         photoSwiper.value.slideNext();
@@ -51,7 +50,6 @@ export default {
       }
     };
 
-    // Navigation handlers for video slides
     const nextVideoSlide = () => {
       if (videoSwiper.value) {
         videoSwiper.value.slideNext();
@@ -63,20 +61,24 @@ export default {
       }
     };
 
-    // Function to extract YouTube ID
     const getYouTubeId = (url) => {
       const regExp =
-        /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+        /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
       const match = url.match(regExp);
       return match ? match[1] : null;
+    };
+
+    const goToDetail = (index) => {
+      router.push({ name: "berita_detail", params: { index } });
     };
 
     return {
       modules,
       schoolInfo,
-      newsItems,
+      berita,
       photoGallery,
       videoGallery,
+      stats,
       photoSwiper,
       videoSwiper,
       setPhotoSwiper,
@@ -86,10 +88,12 @@ export default {
       nextVideoSlide,
       prevVideoSlide,
       getYouTubeId,
+      goToDetail,
     };
   },
 };
 </script>
+
 
 <template>
   <div>
@@ -121,31 +125,45 @@ export default {
     </div>
 
     <!-- News Section -->
-    <div
-      class="mx-auto px-6 py-24 flex flex-col md:flex-row items-start bg-dark-900 rounded-lg shadow-md"
-    >
-      <div class="w-full mb-8 md:mb-0">
-        <h1 class="text-2xl md:text-3xl font-bold text-blue-900 mb-6">
-          Berita Terbaru
-        </h1>
+    <div class="mx-auto px-6 py-24 bg-dark-900 rounded-lg shadow-md">
+      <h1 class="text-2xl md:text-3xl font-bold text-blue-900 mb-6">
+        Berita Terbaru
+      </h1>
 
-        <div class="flex flex-wrap md:flex-nowrap gap-6">
-          <NewsCard
-            v-for="item in newsItems.slice(0, 4)"
-            :key="item.id"
-            :news="item"
-            class="w-full md:w-1/4"
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div
+          v-for="(item, index) in berita.slice(0, 4)"
+          :key="index"
+          class="bg-gray-100 rounded-lg shadow hover:shadow-lg transition duration-300 cursor-pointer"
+          @click="goToDetail(index)"
+        >
+          <img
+            :src="item.icon"
+            alt="Thumbnail Berita"
+            class="w-full h-48 object-cover rounded-t-lg"
           />
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-blue-800 mb-2">
+              {{ item.title }}
+            </h3>
+            <p class="text-gray-600 mb-4">{{ item.description }}</p>
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-gray-500">{{ item.date }}</span>
+              <button class="text-blue-600 hover:text-blue-800 font-medium">
+                Baca Selengkapnya →
+              </button>
+            </div>
+          </div>
         </div>
+      </div>
 
-        <div class="mt-8 text-center">
-          <router-link
-          to =/informasi/berita
-            class="bg-blue-900 hover:bg-blue-700 text-white px-6 py-2 rounded-lg"
-          >
-            Lihat Berita Lainnya
-          </router-link>
-        </div>
+      <div class="mt-8 text-center">
+        <router-link
+          to="/informasi/berita"
+          class="bg-blue-900 hover:bg-blue-700 text-white px-6 py-2 rounded-lg"
+        >
+          Lihat Berita Lainnya
+        </router-link>
       </div>
     </div>
 

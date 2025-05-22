@@ -1,30 +1,25 @@
-<script>
+<script setup>
 import { computed } from "vue";
-import { useStore } from "vuex"; // Pastikan useStore diimpor
+import { useStore } from "vuex";
 import Sidebar from "@/components/Sidebar.vue";
+import { useRouter } from "vue-router";
 
-export default {
-  components: {
-    Sidebar,
-  },
-  setup() {
-    const store = useStore(); // Inisialisasi store Vuex
+const store = useStore();
+const router = useRouter();
 
-    // Ambil data berita dari Vuex store
-    const berita = computed(() => store.getters.getBerita);
+// Ambil data berita dari Vuex store
+const berita = computed(() => store.getters.getBerita);
 
-    // Data untuk sidebar
-    const stats = {
-      totalHits: 424626,
-      visitors: 145889,
-      today: 57,
-    };
+// Data untuk sidebar
+const stats = {
+  totalHits: 424626,
+  visitors: 145889,
+  today: 57,
+};
 
-    return {
-      stats,
-      berita, // Pastikan berita dikembalikan di return
-    };
-  },
+// Fungsi untuk navigasi ke detail berita
+const goToDetail = (index) => {
+  router.push({ name: "berita_detail", params: { index } });
 };
 </script>
 
@@ -42,7 +37,8 @@ export default {
           <div
             v-for="(item, index) in berita"
             :key="index"
-            class="flex items-center gap-4 bg-gray-100 p-4 rounded shadow-sm"
+            class="flex items-center gap-4 bg-gray-100 p-4 rounded shadow-sm cursor-pointer hover:bg-gray-200 transition"
+            @click="goToDetail(index)"
           >
             <!-- Ikon Berita -->
             <img
