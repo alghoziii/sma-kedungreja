@@ -95,50 +95,6 @@ export default {
       </swiper>
     </div>
 
-    <!-- Jejak Pendapat -->
-    <div
-      class="bg-white rounded-lg shadow-md p-4 mb-6 border-2 border-cyan-100"
-    >
-      <h3 class="font-bold mb-2">Jejak Pendapat</h3>
-      <div class="bg-gray-100 p-3 rounded">
-        <p class="text-sm mb-2">
-          Bagaimana pendapat anda mengenai web sekolah kami?
-        </p>
-        <div class="space-y-1">
-          <div class="flex items-center">
-            <input
-              type="radio"
-              id="sangat-bagus"
-              name="pendapat"
-              class="mr-2"
-            />
-            <label for="sangat-bagus" class="text-sm">Sangat Bagus</label>
-          </div>
-          <div class="flex items-center">
-            <input type="radio" id="bagus" name="pendapat" class="mr-2" />
-            <label for="bagus" class="text-sm">Bagus</label>
-          </div>
-          <div class="flex items-center">
-            <input
-              type="radio"
-              id="kurang-bagus"
-              name="pendapat"
-              class="mr-2"
-            />
-            <label for="kurang-bagus" class="text-sm">Kurang Bagus</label>
-          </div>
-        </div>
-        <div class="mt-2 flex space-x-2">
-          <button class="bg-cyan-500 text-white px-2 py-1 text-xs rounded">
-            Pilih
-          </button>
-          <button class="bg-cyan-500 text-white px-2 py-1 text-xs rounded">
-            Lihat
-          </button>
-        </div>
-      </div>
-    </div>
-
     <!-- Agenda (Calendar) -->
     <div class="bg-white rounded-xl shadow-lg border border-cyan-200 p-6 mb-8">
       <h3 class="text-lg font-semibold mb-4 border-b pb-2">Agenda Sekolah</h3>
@@ -152,13 +108,6 @@ export default {
             :format="'dd-MM-yyyy'"
             :locale="'id'"
             :week-start="1"
-            readonly
-            disabled
-            :hide-navigation="true"
-            :month-picker="false"
-            :year-picker="false"
-            :partial-range="false"
-            :prevent-min-max-navigation="true"
           />
         </div>
       </div>

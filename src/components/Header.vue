@@ -19,7 +19,7 @@ const toggleMobileMenu = () => {
 </script>
 
 <template>
-  <header class="bg-blue-800 text-white shadow-md">
+  <header class="bg-blue-800 text-white shadow-md top-0 left-0 w-full z-40">
     <div class="container mx-auto px-4 py-3">
       <div class="flex justify-between items-center">
         <!-- Logo + Nama -->
@@ -57,13 +57,6 @@ const toggleMobileMenu = () => {
             path="/informasi"
           />
           <DropdownMenu label="Galeri" :items="galeriMenu" path="/galeri" />
-
-          <router-link
-            to="/login"
-            class="bg-white hover:bg-yellow-600 text-blue-600 font-medium px-4 py-2 rounded-md transition-colors duration-200"
-          >
-            Login
-          </router-link>
         </nav>
 
         <!-- Menu Mobile -->
@@ -96,33 +89,9 @@ const toggleMobileMenu = () => {
               path="/informasi"
             />
             <DropdownMenu label="Galeri" :items="galeriMenu" path="/galeri" />
-
-            <router-link
-              to="/login"
-              class="bg-white hover:bg-yellow-600 text-blue-600 font-medium px-4 py-2 rounded-md transition-colors duration-200"
-            >
-              Login
-            </router-link>
           </nav>
         </div>
       </div>
     </div>
   </header>
 </template>
-
-<style scoped>
-.absolute {
-  z-index: 50;
-}
-
-.router-link-exact-active {
-  @apply text-yellow-300 font-medium;
-}
-
-.group:hover .absolute {
-  display: block;
-}
-.absolute:hover {
-  display: block;
-}
-</style>

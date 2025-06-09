@@ -1,3 +1,42 @@
+<script>
+import Sidebar from "@/components/Sidebar.vue";
+import { computed } from "vue";
+import { useStore } from "vuex";
+
+export default {
+  components: {
+    Sidebar,
+  },
+  setup() {
+    const store = useStore();
+
+    // Ambil data dari Vuex
+
+    const saranaPrasarana = computed(() => store.getters.getProfileContent.saranaPrasaranaContent.sarana_prasarana);
+    const dataPtkPd = computed(() => store.getters.getProfileContent.saranaPrasaranaContent.data_ptk_pd);
+    const dataSarpras = computed(() => store.getters.getProfileContent.saranaPrasaranaContent.data_sarpras);
+    const dataRombel = computed(() => store.getters.getProfileContent.saranaPrasaranaContent.data_rombel);
+    const daftarRuang = computed(() => store.getters.getProfileContent.saranaPrasaranaContent.daftar_ruang);
+
+    // Data untuk sidebar
+    const stats = {
+      totalHits: 424626,
+      visitors: 145889,
+      today: 57,
+    };
+
+    return {
+      stats,
+      saranaPrasarana,
+      dataPtkPd,
+      dataSarpras,
+      dataRombel,
+      daftarRuang,
+    };
+  },
+};
+</script>
+
 <template>
   <div class="container mx-auto px-6 py-8">
     <div class="flex flex-col md:flex-row gap-6">
@@ -12,7 +51,7 @@
         </h2>
         <div class="space-y-4">
           <div
-            v-for="(value, key) in saranaPrasaranaDetail"
+            v-for="(value, key) in saranaPrasarana"
             :key="key"
             class="flex justify-between pb-2"
           >
@@ -155,42 +194,3 @@
   </div>
 </template>
 
-<script>
-import Sidebar from "@/components/Sidebar.vue";
-import { computed } from "vue";
-import { useStore } from "vuex";
-
-export default {
-  components: {
-    Sidebar,
-  },
-  setup() {
-    const store = useStore();
-
-    // Ambil data dari Vuex
-    const saranaPrasaranaDetail = computed(
-      () => store.getters.getSaranaPrasarana
-    );
-    const dataPtkPd = computed(() => store.getters.getDataPtkPd);
-    const dataSarpras = computed(() => store.getters.getDataSarpras);
-    const dataRombel = computed(() => store.getters.getDataRombel);
-    const daftarRuang = computed(() => store.getters.getDaftarRuang);
-
-    // Data untuk sidebar
-    const stats = {
-      totalHits: 424626,
-      visitors: 145889,
-      today: 57,
-    };
-
-    return {
-      stats,
-      saranaPrasaranaDetail,
-      dataPtkPd,
-      dataSarpras,
-      dataRombel,
-      daftarRuang,
-    };
-  },
-};
-</script>

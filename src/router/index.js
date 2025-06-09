@@ -2,7 +2,6 @@ import { createRouter, createWebHistory } from 'vue-router'
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
 import HomeView from '@/views/HomeView.vue'
 import ProfileView from '@/views/ProfileView.vue'
-import LoginView from '@/views/LoginView.vue'
 import VisiMisiView from '@/views/profile/VisiMisiView.vue'
 import Sejarah from '@/views/profile/Sejarah.vue'
 import SaranaPrasarana from '@/views/profile/SaranaPrasarana.vue'
@@ -28,6 +27,9 @@ import GaleriVideoDetail from '@/views/galleri/GaleriVideoDetail.vue'
 import GaleriFotoDetail from '@/views/galleri/GaleriFotoDetail.vue'
 import BeritaDetail from '@/views/informasi/BeritaDetail.vue'
 import Prestasi from '@/views/informasi/Prestasi.vue'
+import Ekstrakulikuler from '@/views/siswa/Ekstrakulikuler.vue'
+import Osis from '@/views/siswa/Osis.vue'
+import DirektoriAlumni from '@/views/siswa/DirektoriAlumni.vue'
 
 const routes = [
     {
@@ -124,8 +126,21 @@ const routes = [
                         component: DirektoriSiswaDetail,
                         props: true,
                     },
-
-
+                    {
+                        path: 'ekstrakulikuler',
+                        name: 'ekstrakulikuler',
+                        component: Ekstrakulikuler
+                    },
+                    {
+                        path: 'osis',
+                        name: 'osis',
+                        component: Osis
+                    },
+                    {
+                        path: 'direktori_alumni',
+                        name: 'direktori_alumni',
+                        component: DirektoriAlumni
+                    }
                 ]
             },
             {
@@ -191,7 +206,7 @@ const routes = [
             },
 
 
-            { path: '/login', name: 'login', component: LoginView },
+
 
         ]
     }

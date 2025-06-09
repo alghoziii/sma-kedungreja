@@ -6,7 +6,7 @@ import Logo from "@/components/Logo.vue";
 const store = useStore();
 
 // Ambil data program kerja dari Vuex getter
-const programKerja = computed(() => store.getters.getProgramKerja);
+const programKerja = computed(() => store.getters.getProfileContent.programKerja);
 </script>
 
 <template>

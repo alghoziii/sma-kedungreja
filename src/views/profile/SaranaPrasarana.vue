@@ -2,7 +2,8 @@
 import { ref, computed } from "vue";
 import { useStore } from "vuex";
 import { onMounted } from "vue";
-import FacilityItem from "@/components/FacilityItem.vue";
+import SaranaPrasarana from "@/components/SaranaPrasaranaItem.vue";
+
 
 const mainText = ref("SARANA PRASARANA");
 const subText = ref("SMA NEGERI 1 KEDUNGREJA");
@@ -11,7 +12,7 @@ const store = useStore();
 onMounted(() => {
   store.dispatch("fetchFacilities");
 });
-const facilities = computed(() => store.getters.getFacilitiesContent);
+const saranaPrasaranaItem = computed(() => store.getters.getProfileContent.saranaPrasaranaItem);
 </script>
 
 <template>
@@ -28,8 +29,8 @@ const facilities = computed(() => store.getters.getFacilitiesContent);
   </div>
 
   <section class="mx-auto max-w-6xl px-4 md:px-6 py-12 md:py-20">
-    <FacilityItem
-      v-for="(item, index) in facilities"
+    <SaranaPrasarana
+      v-for="(item, index) in saranaPrasaranaItem"
       :key="index"
       :title="item.title"
       :description="item.description"

@@ -2,7 +2,7 @@
 defineProps({
   guru: {
     type: Object,
-    required: true, // Data guru harus diberikan
+    required: true,
   },
 });
 </script>
@@ -12,7 +12,7 @@ defineProps({
     class="border-2 border-gray-300 rounded-lg shadow-md overflow-hidden max-w-md mx-auto"
   >
     <!-- Header -->
-    <div class="bg-blue-600 text-white text-center py-4 relative">
+    <div class="bg-blue-800 text-white text-center py-4 relative">
       <!-- Logo -->
       <img
         src="/logo.png"
@@ -60,7 +60,7 @@ defineProps({
     </div>
 
     <!-- Footer -->
-    <div class="bg-blue-600 text-white text-center py-2 text-sm">
+    <div class="bg-blue-800 text-white text-center py-2 text-sm">
       <p>Cilacap, XX-XX-20XX</p>
       <p>{{ guru.name }}</p>
     </div>

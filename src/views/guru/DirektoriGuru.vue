@@ -69,7 +69,7 @@ export default {
 
       <!-- Main Content -->
       <div class="w-full md:w-3/4">
-        <h2 class="text-3xl font-bold text-blue-900 mb-6">
+        <h2 class="text-3xl font-bold text-blue-800 mb-6">
           Direktori Guru & TU
         </h2>
 
@@ -99,7 +99,6 @@ export default {
           </div>
         </div>
 
-        <!-- Grid Card - Responsive columns -->
         <div
           class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
         >
@@ -119,7 +118,7 @@ export default {
         <!-- Pagination -->
         <div class="flex flex-wrap justify-center mt-6 gap-2">
           <button
-            class="px-3 py-2 bg-sky-500 text-white rounded hover:bg-sky-600 disabled:bg-gray-300"
+            class="px-3 py-2 bg-blue-800 text-white rounded disabled:bg-gray-300"
             @click="prevPage"
             :disabled="currentPage === 1"
           >
@@ -129,13 +128,13 @@ export default {
             v-for="page in paginationRange"
             :key="page"
             class="px-3 py-2 border border-gray-300 rounded"
-            :class="currentPage === page ? 'bg-sky-500 text-white' : ''"
+            :class="currentPage === page ? 'bg-blue-800 text-white' : ''"
             @click="currentPage = page"
           >
             {{ page }}
           </button>
           <button
-            class="px-3 py-2 bg-sky-500 text-white rounded hover:bg-sky-600 disabled:bg-gray-300"
+            class="px-3 py-2 bg-blue-800 text-white rounded disabled:bg-gray-300"
             @click="nextPage"
             :disabled="currentPage === totalPages"
           >

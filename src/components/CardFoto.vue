@@ -1,11 +1,11 @@
 <script setup>
 defineProps({
-  image: String, // URL foto
-  name: String, // Nama Guru atau TU
-  details: String, // Informasi tambahan seperti NIP
+  image: String,
+  name: String,
+  details: String,
   to: {
     type: Object,
-    required: true, // Objek rute yang akan digunakan oleh RouterLink
+    required: true,
   },
 });
 </script>
@@ -13,7 +13,7 @@ defineProps({
 <template>
   <Router-link
     :to="to"
-    class="border-2 border-blue-900 rounded-md p-2 flex flex-col items-center gap-4 cursor-pointer hover:shadow-lg transition"
+    class="border-2 border-blue-800 rounded-md p-2 flex flex-col items-center gap-4 cursor-pointer hover:shadow-lg transition"
   >
     <!-- Foto -->
     <div

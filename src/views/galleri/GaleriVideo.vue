@@ -1,66 +1,106 @@
-<script>
-import { computed } from "vue";
+<script setup>
+import { ref, computed } from "vue";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
-import Sidebar from "@/components/Sidebar.vue";
 
-export default {
-  components: {
-    Sidebar,
-  },
-  setup() {
-    const store = useStore();
-    const router = useRouter();
+// Pagination logic
+const store = useStore();
+const router = useRouter();
+const videos = computed(() => store.getters.getVideos);
 
-    const stats = {
-      totalHits: 424626,
-      visitors: 145889,
-      today: 57,
-    };
+const currentPage = ref(1);
+const perPage = 6; // 6 album per halaman (2 baris x 3 kolom)
+const totalPages = computed(() => Math.ceil(videos.value.length / perPage));
 
-    // Ambil data video dari store
-    const videos = computed(() => store.getters.getVideos);
+const paginatedVidio = computed(() =>
+  videos.value.slice(
+    (currentPage.value - 1) * perPage,
+    currentPage.value * perPage
+  )
+);
 
-    const goToVideoDetail = (id) => {
-      router.push(`video_detail/${id}`);
-    };
+const goToVideoDetail = (id) => {
+  router.push(`video_detail/${id}`);
+};
 
-    return {
-      stats,
-      videos,
-      goToVideoDetail,
-    };
-  },
+function formatDate(dateStr) {
+  const options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+  return new Date(dateStr).toLocaleDateString("id-ID", options);
+}
+const setPage = (page) => {
+  if (page >= 1 && page <= totalPages.value) currentPage.value = page;
 };
 </script>
 
 <template>
-  <div class="container mx-auto px-6 py-8">
-    <div class="flex flex-col md:flex-row gap-6">
-      <!-- Sidebar -->
-      <Sidebar :stats="stats" />
+  <div class="container mx-auto px-4 py-6">
+    <h1 class="text-2xl md:text-3xl font-bold mb-8 text-blue-800">
+      Video Seputar SMAN 1 Kedungreja
+    </h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 mb-8">
+      <div
+        v-for="videos in paginatedVidio"
+        :key="videos.id"
+        class="flex flex-col bg-white rounded-lg shadow-sm"
+      >
+        <div
+          class="rounded-t-lg overflow-hidden h-49 flex items-center justify-center"
+        >
+          <img
+            :src="videos.thumbnail"
+            class="w-full h-50 object-cover rounded-md"
+          />
+        </div>
+        <div class="p-4 flex flex-col flex-1">
+          <h3 class="text-base font-semibold mb-1">{{ videos.title }}</h3>
+          <p class="text-gray-500 text-sm mb-1">
+            {{ formatDate(videos.date) }}
+          </p>
 
-      <div class="flex-1">
-        <h1 class="text-3xl font-bold text-blue-900 mb-6">Galleri Video</h1>
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-          <div
-            v-for="video in videos"
-            :key="video.id"
-            class="text-center cursor-pointer"
-            @click="goToVideoDetail(video.id)"
+          <button
+            class="mt-auto bg-blue-800 text-white py-2 rounded font-semibold hover:bg-blue-700 transition"
+            @click="goToVideoDetail(videos.id)"
           >
-            <img
-              :src="video.thumbnail"
-              :alt="video.title"
-              class="w-full h-50 object-cover rounded-md"
-            />
-            <h3 class="text-lg font-semibold text-gray-900 mt-2">
-              {{ video.title }}
-            </h3>
-            <p class="text-sm text-gray-600">{{ video.date }}</p>
-          </div>
+            Lihat Video
+          </button>
         </div>
       </div>
+    </div>
+    <!-- Pagination -->
+    <div class="flex justify-center space-x-2">
+      <button
+        class="px-3 py-1 rounded border text-gray-700"
+        :class="{ 'bg-gray-200': currentPage === 1 }"
+        :disabled="currentPage === 1"
+        @click="setPage(currentPage - 1)"
+      >
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button
+        v-for="page in totalPages"
+        :key="page"
+        class="px-3 py-1 rounded border"
+        :class="{
+          'bg-blue-800 text-white': currentPage === page,
+          'bg-white text-gray-700': currentPage !== page,
+        }"
+        @click="setPage(page)"
+      >
+        {{ page }}
+      </button>
+      <button
+        class="px-3 py-1 rounded border text-gray-700"
+        :class="{ 'bg-gray-200': currentPage === totalPages }"
+        :disabled="currentPage === totalPages"
+        @click="setPage(currentPage + 1)"
+      >
+        <i class="fas fa-chevron-right"></i>
+      </button>
     </div>
   </div>
 </template>

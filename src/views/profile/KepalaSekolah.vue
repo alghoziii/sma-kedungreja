@@ -11,7 +11,7 @@ export default {
     const store = useStore();
 
     // Ambil data kepala sekolah dari Vuex getter
-    const kepalaSekolahDetail = computed(() => store.getters.getKepalaSekolah);
+    const kepalaSekolahDetail = computed(() => store.getters.getProfileContent.kepala_sekolah);
 
     // Data untuk sidebar
     const stats = {

@@ -1,61 +1,98 @@
 <script setup>
-import { computed } from "vue";
+import { ref, computed } from "vue";
 import { useStore } from "vuex";
-import Sidebar from "@/components/Sidebar.vue";
 import { useRouter } from "vue-router";
 
 const store = useStore();
 const router = useRouter();
 
-// Ambil data berita dari Vuex store
 const berita = computed(() => store.getters.getBerita);
 
-// Data untuk sidebar
-const stats = {
-  totalHits: 424626,
-  visitors: 145889,
-  today: 57,
+// Pagination state
+const currentPage = ref(1);
+const perPage = 6; // tampilkan 6 berita per halaman
+
+const totalPages = computed(() => Math.ceil(berita.value.length / perPage));
+
+const paginatedBerita = computed(() =>
+  berita.value.slice(
+    (currentPage.value - 1) * perPage,
+    currentPage.value * perPage
+  )
+);
+
+const goToDetail = (index) => {
+  // Cari index asli di berita (karena berita di halaman bisa slice)
+  const beritaIndex = (currentPage.value - 1) * perPage + index;
+  router.push({ name: "berita_detail", params: { index: beritaIndex } });
 };
 
-// Fungsi untuk navigasi ke detail berita
-const goToDetail = (index) => {
-  router.push({ name: "berita_detail", params: { index } });
+const setPage = (page) => {
+  if (page >= 1 && page <= totalPages.value) currentPage.value = page;
 };
 </script>
 
 <template>
   <div class="container mx-auto px-6 py-8">
-    <div class="flex flex-col md:flex-row gap-6">
-      <!-- Sidebar -->
-      <Sidebar :stats="stats" />
-
-      <div class="flex-1">
-        <h1 class="text-3xl font-bold text-blue-900 mb-6">Berita</h1>
-
-        <!-- Daftar Berita -->
-        <div class="space-y-4">
-          <div
-            v-for="(item, index) in berita"
-            :key="index"
-            class="flex items-center gap-4 bg-gray-100 p-4 rounded shadow-sm cursor-pointer hover:bg-gray-200 transition"
-            @click="goToDetail(index)"
+    <h1 class="text-2xl md:text-3xl font-bold mb-6 text-blue-800">
+      Berita Seputar SMAN 1 Kedungreja
+    </h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+      <div
+        v-for="(item, idx) in paginatedBerita"
+        :key="item.title + idx"
+        class="bg-white rounded-lg shadow p-4 flex flex-col"
+      >
+        <img
+          :src="item.icon"
+          alt="Berita Icon"
+          class="w-full h-60 object-cover rounded mb-3"
+        />
+        <div class="flex-1 flex flex-col">
+          <h3 class="text-base font-semibold mb-2">{{ item.title }}</h3>
+          <p class="text-sm text-gray-600 flex-1 mb-2">
+            {{ item.description }}
+          </p>
+          <p class="text-xs text-gray-400 mb-3">{{ item.date }}</p>
+          <button
+            @click="goToDetail(idx)"
+            class="mt-auto bg-blue-800 text-white text-sm py-2 w-full rounded hover:bg-yellow-400 transition"
           >
-            <!-- Ikon Berita -->
-            <img
-              :src="item.icon"
-              alt="Berita Icon"
-              class="w-60 h-40 object-cover rounded"
-            />
-
-            <!-- Informasi Berita -->
-            <div>
-              <h3 class="text-lg font-semibold text-black">{{ item.title }}</h3>
-              <p class="text-sm text-gray-700">{{ item.description }}</p>
-              <p class="text-sm text-gray-500">{{ item.date }}</p>
-            </div>
-          </div>
+            Lihat Berita
+          </button>
         </div>
       </div>
+    </div>
+    <!-- Pagination -->
+    <div class="flex justify-center space-x-2">
+      <button
+        class="px-3 py-1 rounded border text-gray-700"
+        :class="{ 'bg-gray-200': currentPage === 1 }"
+        :disabled="currentPage === 1"
+        @click="setPage(currentPage - 1)"
+      >
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button
+        v-for="page in totalPages"
+        :key="page"
+        class="px-3 py-1 rounded border"
+        :class="{
+          'bg-blue-600 text-white': currentPage === page,
+          'bg-white text-gray-700': currentPage !== page,
+        }"
+        @click="setPage(page)"
+      >
+        {{ page }}
+      </button>
+      <button
+        class="px-3 py-1 rounded border text-gray-700"
+        :class="{ 'bg-gray-200': currentPage === totalPages }"
+        :disabled="currentPage === totalPages"
+        @click="setPage(currentPage + 1)"
+      >
+        <i class="fas fa-chevron-right"></i>
+      </button>
     </div>
   </div>
 </template>

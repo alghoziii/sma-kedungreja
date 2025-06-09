@@ -1,113 +1,103 @@
-<script>
-import Sidebar from "@/components/Sidebar.vue";
-import { computed, ref } from "vue";
+<script setup>
+import { ref, computed } from "vue";
 import { useStore } from "vuex";
+import VueDatePicker from "@vuepic/vue-datepicker";
+import { id } from "date-fns/locale"; // pastikan date-fns sudah terinstall
 
-export default {
-  components: {
-    Sidebar,
-  },
-  setup() {
-    const store = useStore();
+const store = useStore();
+const selectedDate = ref(new Date());
 
-    // Ambil data agenda dari Vuex store
-    const allAgendas = computed(() => store.getters.getAgenda);
+const agenda = computed(() => store.state.Informasi.agenda);
 
-    // Filter bulan dan tahun
-    const selectedMonth = ref("April");
-    const selectedYear = ref(2019);
+// Agenda Bulan Ini
+const agendaBulanIni = computed(() => {
+  const month = selectedDate.value.getMonth();
+  const year = selectedDate.value.getFullYear();
+  return agenda.value.filter((item) => {
+    const d = new Date(item.date);
+    return d.getMonth() === month && d.getFullYear() === year;
+  });
+});
 
-    // Filter agenda berdasarkan bulan dan tahun
-    const filteredAgenda = computed(() => {
-      return allAgendas.value.filter(
-        (agenda) =>
-          agenda.month === selectedMonth.value &&
-          agenda.year === parseInt(selectedYear.value)
-      );
-    });
-
-    // Data untuk sidebar
-    const stats = {
-      totalHits: 424626,
-      visitors: 145889,
-      today: 57,
-    };
-
-    return {
-      stats,
-      selectedMonth,
-      selectedYear,
-      filteredAgenda,
-    };
-  },
-};
+// Agenda Hari Ini
+const today = new Date().toISOString().slice(0, 10);
+const agendaToday = computed(() =>
+  agenda.value
+    .filter((item) => item.date === today)
+    .flatMap((item) => item.events)
+);
 </script>
 
 <template>
-  <div class="container mx-auto px-6 py-8">
-    <div class="flex flex-col md:flex-row gap-6">
-      <!-- Sidebar -->
-      <Sidebar :stats="stats" />
-
-      <!-- Main Content -->
-      <div class="w-full md:w-3/4">
-        <h2 class="text-3xl font-bold text-blue-900 mb-6">Agenda</h2>
-
-        <!-- Filter Bulan dan Tahun -->
-        <div class="flex flex-col gap-4 mb-6">
-          <!-- Pilihan Bulan -->
-          <div class="flex items-center gap-4">
-            <label for="bulan" class="text-sm font-medium text-gray-700">
-              Bulan
-            </label>
-            <select
-              id="bulan"
-              v-model="selectedMonth"
-              class="border-gray-300 rounded shadow-sm border-2 focus:ring-blue-500 focus:border-blue-500 text-sm p-1"
-            >
-              <option value="April">April</option>
-              <option value="Mei">Mei</option>
-              <option value="Juni">Juni</option>
-              <!-- Tambahkan bulan lainnya jika diperlukan -->
-            </select>
-          </div>
-
-          <!-- Pilihan Tahun -->
-          <div class="flex items-center gap-3">
-            <label for="tahun" class="text-sm font-medium text-gray-700 mb-2">
-              Tahun
-            </label>
-            <select
-              id="tahun"
-              v-model="selectedYear"
-              class="border-gray-300 rounded shadow-sm border-2 focus:ring-blue-500 focus:border-blue-500 text-sm p-1"
-            >
-              <option value="2019">2019</option>
-              <option value="2020">2020</option>
-              <option value="2021">2021</option>
-              <!-- Tambahkan tahun lainnya jika diperlukan -->
-            </select>
-          </div>
+  <div class="max-w-6xl mx-auto py-8">
+    <!-- Header Hari Ini dan Agenda -->
+    <div
+      class="rounded-2xl bg-blue-800 flex flex-col sm:flex-row items-center justify-between px-8 py-4 mb-8"
+    >
+      <div>
+        <div class="text-white">Hari ini</div>
+        <div class="font-bold text-lg text-white">
+          {{
+            new Date().toLocaleDateString("id-ID", {
+              weekday: "long",
+              day: "numeric",
+              month: "long",
+              year: "numeric",
+            })
+          }}
         </div>
+      </div>
+      <div class="border-l border-white h-12 mx-4 hidden sm:block"></div>
+      <div>
+        <div class="text-white">
+          Agenda : {{ agendaToday.length }} kegiatan
+        </div>
+        <div class="font-semibold text-white">{{ agendaToday.join(" & ") || "-" }}</div>
+      </div>
+    </div>
 
-        <!-- Daftar Agenda -->
-        <div class="space-y-4">
+    <div class="flex flex-col md:flex-row gap-8">
+      <!-- Kalender -->
+      <div class="flex-3">
+        <h2 class="text-blue-800 font-bold text-2xl mb-4">Pilih Tanggal</h2>
+        <div class="rounded-lg overflow-hidden ring-1 ring-blue-800 shadow-sm">
+          <VueDatePicker
+            v-model="selectedDate"
+            inline
+            auto-apply
+            :enable-time-picker="false"
+            :format="'dd-MM-yyyy'"
+            :locale="id"
+            :week-start="1"
+            class="w-full align-item-center justify-center"
+          />
+        </div>
+      </div>
+      <!-- Agenda Bulan Ini -->
+      <div class="flex-1">
+        <h2 class="text-blue-800 font-bold text-2xl mb-4">Agenda bulan ini</h2>
+        <div class="rounded-tl-2xl rounded-bl-2xl bg-gray-100 py-4 px-0 ">
           <div
-            v-for="(agenda, index) in filteredAgenda"
-            :key="index"
-            class="flex items-center gap-4 bg-gray-100 p-4 rounded shadow-sm"
+            v-for="item in agenda"
+            :key="item.date"
+            class="flex border-b last:border-b-0 mb-6"
           >
-            <!-- Ikon Agenda -->
-            <img :src="agenda.icon" alt="Agenda Icon" class="w-16 h-16" />
-
-            <!-- Informasi Agenda -->
-            <div>
-              <h3 class="text-lg font-semibold text-black">
-                {{ agenda.title }}
-              </h3>
-              <p class="text-sm text-gray-700">{{ agenda.description }}</p>
-              <p class="text-sm text-gray-500">{{ agenda.date }}</p>
+            <div
+              class="w-48 min-w-[12rem] flex items-center px-6 py-4 font-semibold text-blue-800"
+            >
+              {{
+                new Date(item.date).toLocaleDateString("id-ID", {
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric",
+                })
+              }}
             </div>
+            <ul class="flex-1 px-4 py-4 text-gray-700 list-decimal space-y-1">
+              <li v-for="(ev, i) in item.events" :key="i">
+                {{ ev }}
+              </li>
+            </ul>
           </div>
         </div>
       </div>

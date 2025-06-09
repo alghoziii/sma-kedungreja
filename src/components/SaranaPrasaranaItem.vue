@@ -14,7 +14,7 @@ defineProps({
       <div class="w-1/2 pr-8">
         <img
           :src="image"
-          alt="Facility Image"
+          alt=" Image"
           class="w-full h-auto object-cover rounded-lg shadow"
         />
       </div>
@@ -23,7 +23,7 @@ defineProps({
         <div v-html="description" class="text-gray-800 text-lg"></div>
       </div>
     </div>
-    
+
     <!-- Reversed: Text left, image right -->
     <div v-else class="flex items-center">
       <div class="w-1/2 pr-8 text-right">
@@ -33,19 +33,19 @@ defineProps({
       <div class="w-1/2 pl-8">
         <img
           :src="image"
-          alt="Facility Image"
+          alt=" Image"
           class="w-full h-auto object-cover rounded-lg shadow"
         />
       </div>
     </div>
   </div>
-  
+
   <!-- Mobile layout (keep as is since it's working well) -->
   <div class="md:hidden flex flex-col mb-16">
     <h3 class="text-2xl font-bold text-cyan-500 mb-3">{{ title }}</h3>
     <img
       :src="image"
-      alt="Facility Image"
+      alt=" Image"
       class="w-full h-auto object-cover rounded-lg shadow mb-4"
     />
     <div v-html="description" class="text-gray-800 text-base"></div>
