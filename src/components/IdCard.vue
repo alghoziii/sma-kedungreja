@@ -1,6 +1,6 @@
 <script setup>
 defineProps({
-  guru: {
+  card: {
     type: Object,
     required: true,
   },
@@ -29,32 +29,27 @@ defineProps({
         <!-- Foto -->
         <div class="col-span-1 border-gray-300 rounded-md overflow-hidden">
           <img
-            :src="guru.image || '/default-placeholder.png'"
-            alt="Foto Guru"
+            :src="card.image || '/default-placeholder.png'"
+            alt="Foto card"
             class="w-full aspect-[3/4] object-cover rounded-md"
           />
         </div>
 
         <!-- Detail -->
         <div class="col-span-2 text-sm space-y-2">
-          <p><strong>Nama:</strong> {{ guru.name }}</p>
-          <p><strong>NIP:</strong> {{ guru.details }}</p>
-          <p><strong>NUPTK:</strong> {{ guru.nuptk || "Tidak tersedia" }}</p>
-          <p>
-            <strong>Jenis Kelamin:</strong>
-            {{ guru.gender || "Tidak tersedia" }}
+          <p v-if="card.name"><strong>Nama:</strong> {{ card.name }}</p>
+          <p v-if="card.nuptk"><strong>NUPTK:</strong> {{ card.nuptk }}</p>
+          <p v-if="card.nis"><strong>NIS:</strong> {{ card.nis }}</p>
+          <p v-if="card.gender"><strong>Jenis Kelamin:</strong> {{ card.gender }}</p>
+          <p v-if="card.birthPlace || card.birthDate">
+            <strong>Tempat/Tgl Lahir:</strong>
+            <span v-if="card.birthPlace">{{ card.birthPlace }}</span>
+            <span v-if="card.birthPlace && card.birthDate">, </span>
+            <span v-if="card.birthDate">{{ card.birthDate }}</span>
           </p>
-          <p>
-            <strong>Tempat/Tgl Lahir:</strong> {{ guru.birthPlace }},
-            {{ guru.birthDate }}
-          </p>
-          <p>
-            <strong>Pangkat/Gol:</strong> {{ guru.rank || "Tidak tersedia" }}
-          </p>
-          <p>
-            <strong>Alamat Rumah:</strong>
-            {{ guru.address || "Tidak tersedia" }}
-          </p>
+          <p v-if="card.jabatan"><strong>Jabatan:</strong> {{ card.jabatan }}</p>
+          <p v-if="card.agama"><strong>Agama:</strong> {{ card.agama }}</p>
+          <p v-if="card.address"><strong>Alamat Rumah:</strong> {{ card.address }}</p>
         </div>
       </div>
     </div>
@@ -62,7 +57,7 @@ defineProps({
     <!-- Footer -->
     <div class="bg-blue-800 text-white text-center py-2 text-sm">
       <p>Cilacap, XX-XX-20XX</p>
-      <p>{{ guru.name }}</p>
+      <p v-if="card.name">{{ card.name }}</p>
     </div>
   </div>
 </template>

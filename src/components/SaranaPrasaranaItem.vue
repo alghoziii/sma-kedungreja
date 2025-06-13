@@ -19,7 +19,7 @@ defineProps({
         />
       </div>
       <div class="w-1/2 pl-8">
-        <h3 class="text-3xl font-bold text-cyan-500 mb-4">{{ title }}</h3>
+        <h3 class="text-3xl font-bold text-blue-800 mb-4">{{ title }}</h3>
         <div v-html="description" class="text-gray-800 text-lg"></div>
       </div>
     </div>
@@ -27,7 +27,7 @@ defineProps({
     <!-- Reversed: Text left, image right -->
     <div v-else class="flex items-center">
       <div class="w-1/2 pr-8 text-right">
-        <h3 class="text-3xl font-bold text-cyan-500 mb-4">{{ title }}</h3>
+        <h3 class="text-3xl font-bold text-blue-800 mb-4">{{ title }}</h3>
         <div v-html="description" class="text-gray-800 text-lg"></div>
       </div>
       <div class="w-1/2 pl-8">
@@ -42,7 +42,7 @@ defineProps({
 
   <!-- Mobile layout (keep as is since it's working well) -->
   <div class="md:hidden flex flex-col mb-16">
-    <h3 class="text-2xl font-bold text-cyan-500 mb-3">{{ title }}</h3>
+    <h3 class="text-2xl font-bold text-blue-800 mb-3">{{ title }}</h3>
     <img
       :src="image"
       alt=" Image"

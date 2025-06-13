@@ -1,32 +1,31 @@
 <script>
-import Sidebar from "@/components/Sidebar.vue";
 import { computed } from "vue";
 import { useStore } from "vuex";
 
 export default {
-  components: {
-    Sidebar,
-  },
   setup() {
     const store = useStore();
 
     // Ambil data dari Vuex
 
-    const saranaPrasarana = computed(() => store.getters.getProfileContent.saranaPrasaranaContent.sarana_prasarana);
-    const dataPtkPd = computed(() => store.getters.getProfileContent.saranaPrasaranaContent.data_ptk_pd);
-    const dataSarpras = computed(() => store.getters.getProfileContent.saranaPrasaranaContent.data_sarpras);
-    const dataRombel = computed(() => store.getters.getProfileContent.saranaPrasaranaContent.data_rombel);
-    const daftarRuang = computed(() => store.getters.getProfileContent.saranaPrasaranaContent.daftar_ruang);
-
-    // Data untuk sidebar
-    const stats = {
-      totalHits: 424626,
-      visitors: 145889,
-      today: 57,
-    };
+    const saranaPrasarana = computed(
+      () =>
+        store.getters.getProfileContent.saranaPrasaranaContent.sarana_prasarana
+    );
+    const dataPtkPd = computed(
+      () => store.getters.getProfileContent.saranaPrasaranaContent.data_ptk_pd
+    );
+    const dataSarpras = computed(
+      () => store.getters.getProfileContent.saranaPrasaranaContent.data_sarpras
+    );
+    const dataRombel = computed(
+      () => store.getters.getProfileContent.saranaPrasaranaContent.data_rombel
+    );
+    const daftarRuang = computed(
+      () => store.getters.getProfileContent.saranaPrasaranaContent.daftar_ruang
+    );
 
     return {
-      stats,
       saranaPrasarana,
       dataPtkPd,
       dataSarpras,
@@ -38,18 +37,15 @@ export default {
 </script>
 
 <template>
-  <div class="container mx-auto px-6 py-8">
+  <div class="mx-auto px-12 py-12">
     <div class="flex flex-col md:flex-row gap-6">
-      <!-- Sidebar -->
-      <Sidebar :stats="stats" />
-
       <!-- Main Content -->
       <div class="w-full md:w-3/4">
         <!-- Sarana & Prasarana -->
-        <h2 class="text-3xl font-bold text-blue-900 mb-6">
+        <h2 class="text-3xl font-bold text-blue-800 mb-6">
           Sarana & Prasarana
         </h2>
-        <div class="space-y-4">
+        <div class="space-y-4 m-6">
           <div
             v-for="(value, key) in saranaPrasarana"
             :key="key"
@@ -61,7 +57,7 @@ export default {
         </div>
 
         <!-- Data PTK dan PD -->
-        <h2 class="text-3xl font-bold text-blue-900 mt-12 mb-6">
+        <h2 class="text-3xl font-bold text-blue-800 mt-12 mb-6">
           Data PTK dan PD
         </h2>
         <table
@@ -92,7 +88,7 @@ export default {
         </table>
 
         <!-- Data Sarpras -->
-        <h2 class="text-3xl font-bold text-blue-900 mt-12 mb-6">
+        <h2 class="text-3xl font-bold text-blue-800 mt-12 mb-6">
           Data Sarpras
         </h2>
         <table
@@ -127,7 +123,7 @@ export default {
         </table>
 
         <!-- Data Rombel -->
-        <h2 class="text-3xl font-bold text-blue-900 mt-12 mb-6">Data Rombel</h2>
+        <h2 class="text-3xl font-bold text-blue-800 mt-12 mb-6">Data Rombel</h2>
         <p class="text-gray-700 mb-4">
           SMA NEGERI 1 KEDUNGREJA memiliki jumlah rombel sebanyak 19, dengan
           uraian sebagai berikut:
@@ -162,7 +158,7 @@ export default {
           </tbody>
         </table>
 
-        <h2 class="text-3xl font-bold text-blue-900 mt-12 mb-6">
+        <h2 class="text-3xl font-bold text-blue-800 mt-12 mb-6">
           Daftar Ruang
         </h2>
         <table class="table-auto w-full border-collapse border border-gray-400">

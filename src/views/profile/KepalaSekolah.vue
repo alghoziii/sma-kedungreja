@@ -1,27 +1,15 @@
 <script>
-import Sidebar from "@/components/Sidebar.vue";
 import { computed } from "vue";
 import { useStore } from "vuex";
 
 export default {
-  components: {
-    Sidebar,
-  },
   setup() {
     const store = useStore();
-
-    // Ambil data kepala sekolah dari Vuex getter
-    const kepalaSekolahDetail = computed(() => store.getters.getProfileContent.kepala_sekolah);
-
-    // Data untuk sidebar
-    const stats = {
-      totalHits: 424626,
-      visitors: 145889,
-      today: 57,
-    };
+    const kepalaSekolahDetail = computed(
+      () => store.getters.getProfileContent.kepala_sekolah
+    );
 
     return {
-      stats,
       kepalaSekolahDetail,
     };
   },
@@ -29,35 +17,37 @@ export default {
 </script>
 
 <template>
-  <div class="container mx-auto px-6 py-8">
-    <div class="flex flex-col md:flex-row gap-6">
-      <!-- Sidebar -->
-      <Sidebar :stats="stats" />
+  <div class="mx-auto max-w-6xl px-4 py-8">
 
-      <!-- Main Content -->
-      <div class="w-full md:w-3/4">
-        <h2 class="text-3xl font-bold text-blue-900 mb-6">Kepala Sekolah</h2>
+    <div class="space-y-8">
+      <h2 class="text-4xl font-bold">Kepala Sekolah</h2>
+    
+    <div class="flex flex-col items-center">
+      <div class="flex justify-center mb-6">
+        <img
+          src="/guru/KepalaSekolah.jpg"
+          alt="Foto Kepala Sekolah"
+          class="w-56 h-72 object-cover border-blue-800 rounded-md shadow"
+        />
+      </div>
 
-        <!-- Gambar Kepala Sekolah -->
-        <div class="flex justify-center mb-6">
-          <img
-            src="/kepala.jpg"
-            alt="Foto Kepala Sekolah"
-            class="w-48 h-64 object-cover border border-gray-300 rounded-md"
-          />
-        </div>
-
-        <!-- Tabel Data Kepala Sekolah -->
-        <table class="table-auto w-full border-collapse border border-gray-400">
+      <div class="w-full flex justify-center">
+        <table
+          class="min-w-[700px] max-w-3xl w-full border-collapse border border-gray-400 rounded-lg shadow"
+        >
           <tbody>
             <tr v-for="(value, key, index) in kepalaSekolahDetail" :key="index">
-              <td class="border border-gray-400 p-2 font-medium text-center">
+              <td
+                class="border border-gray-400 p-2 font-medium text-center w-10 bg-gray-50"
+              >
                 {{ index + 1 }}
               </td>
-              <td class="border border-gray-400 p-2 font-medium">
+              <td
+                class="border border-gray-400 p-2 font-semibold w-72 bg-gray-50"
+              >
                 {{ key }}
               </td>
-              <td class="border border-gray-400 p-2">
+              <td class="border border-gray-400 p-2 w-[400px]">
                 {{ value }}
               </td>
             </tr>
@@ -66,5 +56,5 @@ export default {
       </div>
     </div>
   </div>
+  </div>
 </template>
-

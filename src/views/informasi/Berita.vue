@@ -56,7 +56,7 @@ const setPage = (page) => {
           <p class="text-xs text-gray-400 mb-3">{{ item.date }}</p>
           <button
             @click="goToDetail(idx)"
-            class="mt-auto bg-blue-800 text-white text-sm py-2 w-full rounded hover:bg-yellow-400 transition"
+            class="mt-auto bg-blue-800 text-white text-sm py-2 w-full rounded hover:bg-blue-700 transition"
           >
             Lihat Berita
           </button>

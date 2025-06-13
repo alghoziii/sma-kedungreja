@@ -2,7 +2,6 @@
 import { computed } from "vue";
 import { useStore } from "vuex";
 import { useRoute, useRouter } from "vue-router";
-import Sidebar from "@/components/Sidebar.vue";
 
 export default {
   setup() {

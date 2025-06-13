@@ -17,6 +17,7 @@
     "@headlessui/vue": "^1.7.23",
     "@vuepic/vue-datepicker": "^11.0.2",
     "swiper": "^11.2.8",
+    "v-calendar": "^2.4.2",
     "v-click-outside": "^3.2.0",
     "vue": "^3.5.13",
     "vue-router": "^4.5.1",

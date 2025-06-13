@@ -3,6 +3,7 @@ import { computed } from "vue";
 import { useStore } from "vuex";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Autoplay } from "swiper/modules";
+import "swiper/css";
 
 const store = useStore();
 const sejarah = computed(() => store.getters.getProfileContent.sejarah || {});
@@ -13,7 +14,9 @@ const modules = [Autoplay];
 <template>
   <section class="bg-white py-10 px-4 sm:px-6 lg:px-12">
     <!-- Sejarah -->
-    <div class="bg-[#083D77] text-white p-6 rounded-lg flex flex-col lg:flex-row lg:items-center lg:justify-between">
+    <div
+      class="bg-[#083D77] text-white p-6 rounded-lg flex flex-col lg:flex-row lg:items-center lg:justify-between"
+    >
       <div class="lg:w-2/3">
         <h2 class="text-2xl font-bold mb-4">{{ sejarah.title }}</h2>
         <div v-html="sejarah.description"></div>
@@ -30,7 +33,9 @@ const modules = [Autoplay];
 
     <!-- Slider Kepala Sekolah -->
     <div class="mt-12" v-if="kepalaSekolah.length">
-      <h1 class="text-xl font-bold text-[#083D77] mb-6">Urutan Kepala Sekolah</h1>
+      <h1 class="text-xl font-bold text-[#083D77] mb-6">
+        Urutan Kepala Sekolah
+      </h1>
 
       <Swiper
         :modules="modules"
@@ -40,12 +45,12 @@ const modules = [Autoplay];
         :autoplay="{
           delay: 2500,
           disableOnInteraction: false,
-          pauseOnMouseEnter: true
+          pauseOnMouseEnter: true,
         }"
         :breakpoints="{
           320: { slidesPerView: 1, spaceBetween: 20 },
           768: { slidesPerView: 2, spaceBetween: 25 },
-          1024: { slidesPerView: 3, spaceBetween: 30 }
+          1024: { slidesPerView: 3, spaceBetween: 30 },
         }"
         class="pb-8"
       >

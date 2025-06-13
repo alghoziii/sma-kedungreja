@@ -40,7 +40,40 @@ const toggleMobileMenu = () => {
         </div>
 
         <!-- Menu Desktop -->
-        <nav class="hidden md:flex items-center space-x-6">
+        <nav class="hidden md:flex items-center space-x-6 relative">
+          <router-link
+            to="/"
+            class="hover:text-yellow-300 transition-colors duration-200"
+          >
+            Beranda
+          </router-link>
+
+          <DropdownMenu label="Profil" :items="profileMenu" path="/profil" />
+          <DropdownMenu label="Guru" :items="guruMenu" path="/guru" />
+          <DropdownMenu label="Siswa" :items="siswaMenu" path="/siswa" />
+          <DropdownMenu
+            label="Informasi"
+            :items="informasiMenu"
+            path="/informasi"
+          />
+
+          <DropdownMenu label="Galeri" :items="galeriMenu" path="/galeri" />
+        </nav>
+
+        <!-- Menu Mobile -->
+        <button
+          @click="toggleMobileMenu"
+          class="md:hidden text-2xl focus:outline-none"
+        >
+          <i class="fa fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
+      <!-- Dropdown Menu Mobile -->
+      <div
+        v-if="mobileMenuOpen"
+        class="absolute left-0 right-0 mt-2 w-full bg-blue-800 z-50 md:hidden"
+      >
+        <nav class="flex flex-col space-y-1 px-4 py-3">
           <router-link
             to="/"
             class="hover:text-yellow-300 transition-colors duration-200"
@@ -58,39 +91,6 @@ const toggleMobileMenu = () => {
           />
           <DropdownMenu label="Galeri" :items="galeriMenu" path="/galeri" />
         </nav>
-
-        <!-- Menu Mobile -->
-        <button
-          @click="toggleMobileMenu"
-          class="md:hidden text-2xl focus:outline-none"
-        >
-          <i class="fa fa-bars" aria-hidden="true"></i>
-        </button>
-
-        <!-- Dropdown Menu Mobile -->
-        <div
-          v-if="mobileMenuOpen"
-          class="absolute top-16 left-0 right-0 bg-blue-800 z-50 md:hidden"
-        >
-          <nav class="flex flex-col space-y-4 p-4">
-            <router-link
-              to="/"
-              class="hover:text-yellow-300 transition-colors duration-200"
-            >
-              Beranda
-            </router-link>
-
-            <DropdownMenu label="Profil" :items="profileMenu" path="/profil" />
-            <DropdownMenu label="Guru" :items="guruMenu" path="/guru" />
-            <DropdownMenu label="Siswa" :items="siswaMenu" path="/siswa" />
-            <DropdownMenu
-              label="Informasi"
-              :items="informasiMenu"
-              path="/informasi"
-            />
-            <DropdownMenu label="Galeri" :items="galeriMenu" path="/galeri" />
-          </nav>
-        </div>
       </div>
     </div>
   </header>

@@ -1,22 +1,16 @@
 <script setup>
+import Kalender from "@/components/Kalender.vue";
 import { computed } from "vue";
 import { useStore } from "vuex";
-import Logo from "@/components/Logo.vue";
+
 
 const store = useStore();
-const content = computed(() => store.getters.getKalender);
+const content = computed(() => store.getters.getKalenderAkademik);
 </script>
 
 <template>
-  <section class="mx-auto max-w-6xl px-4 py-8">
-    <!-- Kiri: Konten visiMisi -->
-    <div class="space-y-6">
-      <h2 class="text-4xl font-bold">{{ content.title }}</h2>
-      <div class="flex justify-center">
-        <img src="/kalender.png" alt="Logo" class="w-auto h-auto" />
-      </div>
-    </div>
+  <section class="mx-auto max-w-lg py-4 mt-4 px-4">
+    <h2 class="text-4xl font-bold text-center mb-8 text-blue-800 ">{{ content.title }}</h2>
+    <Kalender/>
   </section>
 </template>
-
-

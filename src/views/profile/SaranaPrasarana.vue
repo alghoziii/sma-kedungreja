@@ -41,7 +41,7 @@ const saranaPrasaranaItem = computed(() => store.getters.getProfileContent.saran
     <div class="text-center mt-10">
       <Router-link
         to="/profil/sarana_prasarana/detail"
-        class="px-4 py-2 border border-sky-500 text-sky-500 hover:bg-sky-500 hover:text-white rounded transition"
+        class="px-4 py-2 border border-blue-800 text-blue-800 hover:bg-blue-800 hover:text-white rounded transition"
       >
         Lihat Selengkapnya
       </Router-link>
