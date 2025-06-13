@@ -16,7 +16,7 @@ const guruData = store.getters["getGuruById"](id);
     <h1 class="text-3xl font-bold text-blue-800 mb-6">Profil Guru</h1>
 
     <!-- Kartu Identitas -->
-    <IdCard v-if="guruData" :card="guruData" />
+    <IdCard v-if="guruData" :card="guruData" type="guru" />
 
     <!-- Tombol Kembali -->
     <div class="mt-6 text-center">

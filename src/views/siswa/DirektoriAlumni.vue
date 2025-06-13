@@ -7,10 +7,10 @@ const store = useStore();
 const currentPage = ref(1);
 const itemsPerPage = 8;
 const searchQuery = ref("");
-const direktoriSiswa = computed(() => store.getters.getDirektoriSiswa);
+const direktoriSiswaAlumni = computed(() => store.getters.getDirektoriSiswaAlumni);
 
 const filtered = computed(() =>
-  direktoriSiswa.value.filter((item) =>
+direktoriSiswaAlumni.value.filter((item) =>
     item.name.toLowerCase().includes(searchQuery.value.toLowerCase())
   )
 );
@@ -66,7 +66,7 @@ const paginationRange = computed(() => {
         :image="item.image"
         :name="item.name"
         :details="item.details"
-        :to="{ name: 'direktori_siswa_detail', params: { id: item.id } }"
+        :to="{ name: 'direktori_siswa_alumni_detail', params: { id: item.id } }"
       />
     </div>
 

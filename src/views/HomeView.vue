@@ -2,8 +2,12 @@
 import { ref, computed, onMounted, onUnmounted } from "vue";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
+import Artikel from "@/components/Artikel.vue";
 
 export default {
+  components: {
+    Artikel,
+  },
   setup() {
     const store = useStore();
     const router = useRouter();
@@ -96,7 +100,7 @@ export default {
         <div
           v-for="(slide, i) in slides"
           :key="i"
-          class="absolute inset-0 transition-opacity duration-700 "
+          class="absolute inset-0 transition-opacity duration-700"
           :class="activeIndex === i ? 'opacity-100' : 'opacity-0'"
         >
           <img
@@ -223,31 +227,20 @@ export default {
         </div>
       </div>
     </div>
-
-    <!-- Artikel Section -->
-    <div class="mx-auto px-6 py-24">
-      <div class="flex items-center justify-between mb-8">
-        <h1 class="text-2xl md:text-3xl font-bold">Artikel Terbaru</h1>
+    <div class="mx-auto px-6 py-44">
+      <!-- Header Artikel -->
+      <div class="flex items-center justify-between ">
+        <h1 class="text-1xl md:text-3xl font-bold ms-10">Artikel Terbaru</h1>
         <router-link
-          to="/galeri/galeri_foto"
-          class="px-6 py-2 font-semibold hover:text-blue-800"
+          to="/informasi/artikel"
+          class=" font-semibold hover:text-blue-800"
         >
           Lihat Semua Artikel
         </router-link>
       </div>
-      <div class="space-y-3">
-        <div
-          v-for="(item, index) in artikel.slice(0, 5)"
-          :key="index"
-          class="bg-white border rounded-lg px-5 py-3 shadow-sm hover:shadow transition cursor-pointer"
-          @click="goToArtikelDetail(item.slug)"
-        >
-          <div class="font-bold text-gray-900">{{ item.title }}</div>
-          <div class="text-sm text-gray-500 mt-1">{{ item.date }}</div>
-          <div class="text-gray-700 mt-2">{{ item.description }}</div>
-          <!-- Tambahkan ini -->
-        </div>
-      </div>
+
+      <!-- Komponen Artikel (daftar artikel) -->
+      <Artikel />
     </div>
 
     <!-- gallery Section -->

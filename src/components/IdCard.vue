@@ -4,6 +4,10 @@ defineProps({
     type: Object,
     required: true,
   },
+  type: {
+    type: String,
+    required: true,
+  },
 });
 </script>
 
@@ -13,14 +17,21 @@ defineProps({
   >
     <!-- Header -->
     <div class="bg-blue-800 text-white text-center py-4 relative">
-      <!-- Logo -->
       <img
         src="/logo.png"
         alt="Logo SMA Negeri 1 Kedungreja"
         class="absolute left-4 top-4 w-12 h-12"
       />
       <h2 class="text-xl font-bold">SMA NEGERI 1 KEDUNGREJA</h2>
-      <p class="text-sm">KARTU TANDA PENGAJAR</p>
+      <p class="text-sm">
+        {{
+          type === "guru"
+            ? "KARTU TANDA PENGAJAR"
+            : type === "siswa"
+            ? "KARTU TANDA SISWA"
+            : "KARTU TANDA SISWA ALUMNI"
+        }}
+      </p>
     </div>
 
     <!-- Konten -->
@@ -38,18 +49,37 @@ defineProps({
         <!-- Detail -->
         <div class="col-span-2 text-sm space-y-2">
           <p v-if="card.name"><strong>Nama:</strong> {{ card.name }}</p>
-          <p v-if="card.nuptk"><strong>NUPTK:</strong> {{ card.nuptk }}</p>
-          <p v-if="card.nis"><strong>NIS:</strong> {{ card.nis }}</p>
-          <p v-if="card.gender"><strong>Jenis Kelamin:</strong> {{ card.gender }}</p>
+
+          <!-- Guru -->
+          <template v-if="type === 'guru'">
+            <p v-if="card.nuptk"><strong>NUPTK:</strong> {{ card.nuptk }}</p>
+            <p v-if="card.jabatan">
+              <strong>Jabatan:</strong> {{ card.jabatan }}
+            </p>
+          </template>
+
+          <!-- Siswa & Alumni -->
+          <template v-else>
+            <p v-if="card.nis"><strong>NIS:</strong> {{ card.nis }}</p>
+            <p v-if="card.class"><strong>Kelas:</strong> {{ card.class }}</p>
+            <p v-if="type === 'alumni' && card.graduationYear">
+              <strong>Tahun Lulus:</strong> {{ card.graduationYear }}
+            </p>
+          </template>
+
+          <p v-if="card.gender">
+            <strong>Jenis Kelamin:</strong> {{ card.gender }}
+          </p>
           <p v-if="card.birthPlace || card.birthDate">
             <strong>Tempat/Tgl Lahir:</strong>
             <span v-if="card.birthPlace">{{ card.birthPlace }}</span>
             <span v-if="card.birthPlace && card.birthDate">, </span>
             <span v-if="card.birthDate">{{ card.birthDate }}</span>
           </p>
-          <p v-if="card.jabatan"><strong>Jabatan:</strong> {{ card.jabatan }}</p>
           <p v-if="card.agama"><strong>Agama:</strong> {{ card.agama }}</p>
-          <p v-if="card.address"><strong>Alamat Rumah:</strong> {{ card.address }}</p>
+          <p v-if="card.address">
+            <strong>Alamat Rumah:</strong> {{ card.address }}
+          </p>
         </div>
       </div>
     </div>

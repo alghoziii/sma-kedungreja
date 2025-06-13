@@ -30,6 +30,8 @@ import Prestasi from '@/views/informasi/Prestasi.vue'
 import Ekstrakulikuler from '@/views/siswa/Ekstrakulikuler.vue'
 import Osis from '@/views/siswa/Osis.vue'
 import DirektoriAlumni from '@/views/siswa/DirektoriAlumni.vue'
+import DirektoriAlumniDetail from '@/views/siswa/DirektoriAlumniDetail.vue'
+import Artikel from '@/views/informasi/Artikel.vue'
 
 const routes = [
     {
@@ -140,7 +142,13 @@ const routes = [
                         path: 'direktori_alumni',
                         name: 'direktori_alumni',
                         component: DirektoriAlumni
-                    }
+                    },
+                    {
+                        path: 'direktori_siswa_alumni_detail/:id',
+                        name: 'direktori_siswa_alumni_detail',
+                        component: DirektoriAlumniDetail,
+                        props: true,
+                    },
                 ]
             },
             {
@@ -168,6 +176,11 @@ const routes = [
                         name: 'berita_detail',
                         component: BeritaDetail,
                         props: true,
+                    },
+                    {
+                        path: 'artikel',
+                        name: 'artikel',
+                        component: Artikel,
                     },
                     {
                         path: "prestasi",
