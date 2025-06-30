@@ -1,20 +1,3 @@
-<script setup>
-import { computed } from "vue";
-import { useStore } from "vuex";
-
-const store = useStore();
-
-const schoolInfo = computed(() => {
-  return (
-    store.getters.getSchoolInfo || {
-      address: "Jalan Raya Tambaksari Tp 212 Kedungreja Cilacap",
-      email: "info@sman1kedungreja.sch.id",
-      phone: "02805260258",
-    }
-  );
-});
-</script>
-
 <template>
   <footer class="bg-blue-800 text-white py-8">
     <div class="container mx-auto px-2">
@@ -32,11 +15,11 @@ const schoolInfo = computed(() => {
           <h2 class="text-lg font-bold uppercase text-center md:text-left">
             NEGERI 1 KEDUNGREJA
           </h2>
-          <p class="text-sm mt-2 text-center md:text-left">
-            {{ schoolInfo.address }}
+          <p class="text-sm mt-2 text-center md:text-center">
+            Jalan Raya Tambaksari Tp 212 Kedungreja Cilacap
           </p>
-          <p class="text-sm text-center md:text-left">{{ schoolInfo.email }}</p>
-          <p class="text-sm text-center md:text-left">{{ schoolInfo.phone }}</p>
+          <p class="text-sm text-center md:text-left">info@sman1kedungreja.sch.id</p>
+          <p class="text-sm text-center md:text-left">02805260258</p>
         </div>
 
         <!-- Menu -->
