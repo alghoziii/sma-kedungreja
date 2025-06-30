@@ -12,8 +12,8 @@ export default createStore({
                 { id: 7, title: "Program Kerja", route: "/profil/program_kerja" },
 
             ],
-            guruMenu: [
-                { id: 1, title: "Direktori Guru", route: "/guru/direktori_guru" },
+             guruMenu: [
+                { id: 1, title: "Direktori Guru & TU", route: "/guru/direktori_guru" },
                 { id: 2, title: "Kalender Akademik", route: "/guru/kalender" },
             ],
             siswaMenu: [
