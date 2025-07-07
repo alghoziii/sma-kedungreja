@@ -12,17 +12,6 @@ const ekstrakurikuler = computed(() => store.getters.getEkstrakurikuler);
     <div
       class="flex flex-col md:flex-row bg-gradient-to-br from-blue-800 via-blue-500 to-blue-500 min-h-[350px] w-full relative overflow-hidden"
     >
-      <svg
-        class="absolute opacity-20 left-0 top-0 w-full h-full pointer-events-none"
-        viewBox="0 0 800 400"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <circle cx="600" cy="0" r="300" fill="#fff" fill-opacity="0.2" />
-        <circle cx="800" cy="200" r="200" fill="#fff" fill-opacity="0.08" />
-        <circle cx="0" cy="400" r="200" fill="#fff" fill-opacity="0.10" />
-      </svg>
-
       <div
         class="flex-1 flex flex-col justify-center px-14 py-12 md:py-4 md:pl-20"
       >
