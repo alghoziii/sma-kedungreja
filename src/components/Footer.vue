@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-blue-800 text-white py-8">
+  <footer class="bg-blue-800 text-white py-10 mt-12">
     <div class="container mx-auto px-2">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
         <!-- Logo dan Informasi Sekolah -->

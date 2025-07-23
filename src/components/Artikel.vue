@@ -1,11 +1,11 @@
 <!-- components/ArtikelTerbaru.vue -->
 <template>
-  <div class="mx-auto px-10 py-24">
+  <div class="mx-auto px-10 py-12">
     <div class="space-y-3">
       <div
         v-for="(item, index) in artikel.slice(0, 5)"
         :key="index"
-        class="bg-white border rounded-lg px-5 py-3 shadow-sm hover:shadow transition cursor-pointer"
+        class="bg-white border rounded-lg px-5 py-2 shadow-sm hover:shadow transition cursor-pointer"
         @click="goToArtikelDetail(item.slug)"
       >
         <div class="font-bold text-gray-900">{{ item.title }}</div>

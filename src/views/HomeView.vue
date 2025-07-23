@@ -227,7 +227,7 @@ export default {
         </div>
       </div>
     </div>
-    <div class="mx-auto px-6 py-44">
+    <div class="mx-auto px-6 py-20">
       <!-- Header Artikel -->
       <div class="flex items-center justify-between ">
         <h1 class="text-1xl md:text-3xl font-bold ms-10">Artikel Terbaru</h1>
@@ -244,9 +244,9 @@ export default {
     </div>
 
     <!-- gallery Section -->
-    <div class="mx-auto px-6 py-24">
+    <div class="mx-auto px-2 mb-24"> 
       <div class="flex items-center justify-between mb-8">
-        <h1 class="text-2xl md:text-3xl font-bold">Galeri SMAN 1 Kedungreja</h1>
+        <h1 class="text-2xl md:text-3xl font-bold ms-10">Galeri SMAN 1 Kedungreja</h1>
         <router-link
           to="/galeri/galeri_foto"
           class="px-6 py-2 font-semibold hover:text-blue-800"
